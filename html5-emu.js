@@ -255,6 +255,7 @@ function js_emu_action(wid, eves)
     var kd = event_listener_array["keydown"]
     var ku = event_listener_array["keyup"]
 
+    ygModDir("little-space");
     if (kd != null) {
 	var eve = eves
 
@@ -290,10 +291,11 @@ function js_emu_action(wid, eves)
     for (var i = 0; i < arr_cp.length; ++i) {
 	arr_cp[i](ctimer);
     }
+    ygModDirOut();
     return YEVE_ACTION
 }
 
-var attached_wid = null
+attached_wid = null
 
 function js_emu_kboum(wid)
 {
@@ -316,13 +318,14 @@ function js_emu_wid_init(wid)
 
     attached_wid = wid
 
+    ygModDir(yeGetStringAt(wid, "dmod"));
     for (var i = 0; i < yeLen(files); ++i) {
 	print("load: ", yeGetStringAt(wid, "dmod"))
-	ygLoadScript(ygGet(yeGetStringAt(wid, "dmod")),
-		     ygGetManager("js"),
-		     yeGetStringAt(files, i))
+	ysLoadFile(ygGetManager("js"),
+		   yeGetStringAt(files, i));
 	print("out 0")
     }
+    ygModDirOut();
     yeCreateString("rgba: 255 255 255 255", wid, "background")
     var entries = yeReCreateArray(wid, "entries")
     var can_w = yeCreateArray(entries)

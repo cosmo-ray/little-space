@@ -311,7 +311,13 @@ function GameLoop()
 		isEnd = true
 		print("THE END !!!", timeDiff, ret)
 		if (is_yirl)
-		    yesCall(ygGet("FinishGame"))
+		    var qf = yeGet(attached_wid, "quit")
+		    if (qf) {
+			yesCall(qf, attached_wid)
+			print("OUT !!!!!!!!")
+		    } else {
+			yesCall(ygGet("FinishGame"))
+		    }
 		return ret;
 	    }
 	    beginTime += timeDiff;

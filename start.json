@@ -6,7 +6,9 @@
     "init-scripts" : [
 	["js", "js_emu_init"]
     ],
-    "starting widget" : {
+    "make-prototype": "little-space",
+    "starting widget" : "little-space",
+    "little-space" : {
 	"<type>": "html-emu",
 	"dmod": "little-space",
 	"files": [
