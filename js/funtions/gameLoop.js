@@ -309,12 +309,10 @@ function GameLoop()
 	    ret = doPartTurn(true);
 	    if (ret) {
 		isEnd = true
-		print("THE END !!!", timeDiff, ret)
 		if (is_yirl)
 		    var qf = yeGet(attached_wid, "quit")
 		    if (qf) {
 			yesCall(qf, attached_wid)
-			print("OUT !!!!!!!!")
 		    } else {
 			yesCall(ygGet("FinishGame"))
 		    }
