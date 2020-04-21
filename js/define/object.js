@@ -24,7 +24,7 @@ var beam = addType(14, 34, basicSheet, 35, laser_gun_pos);
 
 /* ----------- bonus --------------------*/
 
-var bonus = addType(24, 24, img_bonus, 35);
+var bonus = addType(24, 24, img_bonus, 35, bonus_pos);
 
 /*------------ Weapon Type ---------------*/
 
