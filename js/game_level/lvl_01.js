@@ -9,7 +9,7 @@
 
 /* ---------- LVL I Testing ---------- */
 
-var map = new Map("Mars.wav", true);
+var map = new Map("battleThemeA.mp3", true);
 
 /* *
  * ----------------------------------------
