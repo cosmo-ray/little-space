@@ -117,7 +117,6 @@ function document_type()
     this.elems = {}
 }
 
-
 document_type.prototype.getElementById = function(id)
 {
     return this.elems[id]

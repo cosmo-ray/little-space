@@ -1,11 +1,3 @@
-/* *
- * ---------------------------------------- 
- * JS du projet Little Space 
- * V0.0.03 | 01052013 
- * 
- *                                  ==> IN
- * ---------------------------------------- 
- * */
 
 function PosSprite(x, y, w, h)
 {
@@ -20,37 +12,27 @@ function PosSprite(x, y, w, h)
     }
 }
 
-/* ---------- Chargement background ---------- */
-
 var img_background_testing = new Image();
 img_background_testing.src = 'images/tilesetOpenGameBackground.png';
-
-/* ---------- Chargement mods ---------- */
 
 var img_ship_testing = new Image();
 img_ship_testing.src = 'images/Spaceship004.png';
 
-/* ---------- Chargement player ---------- */
-
 var img_player_testing = new Image();
 img_player_testing.src = 'images/set_1080/witch.png'
-
-
-/* ---------- Chargement effets ---------- */
 
 // --- Explosion
 var img_explode_testing = new Image();
 img_explode_testing.src = 'images/explosions_sheet-clouds_2.png';
 var first_boum_pos = new PosSprite(0, 3600, 200, 200);
 
-/* ---------- Chargement armes ---------- */
+var spell0 = new Image();
+spell0.src = 'images/blood-magic/Blood-Magic-Effect_03.png';
+print(img_explode_testing.src)
 
-// --- Lasers
-var basicSheet = new Image();
-basicSheet.src = 'images/set_1080/image_set.png';
-var machin_gun_pos = new PosSprite(0,50,50,50);
-var laser_gun_pos = new PosSprite(60,140,30,100);
-var lgatlin_gun_pos = new PosSprite(0,100,50,50);
+var spell1 = new Image();
+spell1.src = 'images/blood-magic/Blood-Magic-Effect_06.png';
+
 
 var img_bonus = new Image();
 img_bonus.src = 'images/crystal-qubodup-ccby3-32-blue.png';
