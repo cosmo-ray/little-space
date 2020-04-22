@@ -4,8 +4,9 @@ var fast_ship_testing = addType(27, 30, img_ship_testing, 30);
 
 var player_testing = addType(30, 60, img_player_testing, 25);
 
-var bubble_testing = addType(50, 50, spell0, 35);
-var beam = addType(50, 50, spell1, 35);
+var bubble_testing = addType(40, 20, spell1, 35);
+
+var beam = addType(30, 30, spell0, 35);
 
 var bonus = addType(24, 24, img_bonus, 35, bonus_pos);
 

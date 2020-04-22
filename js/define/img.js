@@ -27,12 +27,11 @@ img_explode_testing.src = 'images/explosions_sheet-clouds_2.png';
 var first_boum_pos = new PosSprite(0, 3600, 200, 200);
 
 var spell0 = new Image();
-spell0.src = 'images/blood-magic/Blood-Magic-Effect_03.png';
+spell0.src = 'images/blood-magic/Blood-Magic-Effect_04.png';
 print(img_explode_testing.src)
 
 var spell1 = new Image();
 spell1.src = 'images/blood-magic/Blood-Magic-Effect_06.png';
-
 
 var img_bonus = new Image();
 img_bonus.src = 'images/crystal-qubodup-ccby3-32-blue.png';
