@@ -97,6 +97,34 @@ function simpleFire(turn, typeBubble)
     }
 }
 
+function spam2Fire(turn, typeBubble)
+{
+    if (this.type.amunition == 0)
+	return;
+    if ((turn - this.lastShoot) >  this.type.rate)
+    {
+	this.lastShoot = turn;
+	this.amunition -= 2;
+	if (this.amunition < 0)
+	    this.amunition = 0;
+
+	if (this.asignAt.type != player_type)
+	    abort();
+	playerBulletManager.push(
+	    new Bubble(typeBubble,
+		       inversToLeft,
+		       this.asignAt.x + this.asignAt.w / 2 - typeBubble.width / 2,
+		       this.asignAt.y - typeBubble.height,
+		       this.type.life));
+	playerBulletManager.push(
+	    new Bubble(typeBubble,
+		       inversToRight,
+		       this.asignAt.x + this.asignAt.w / 2 - typeBubble.width / 2,
+		       this.asignAt.y - typeBubble.height,
+		       this.type.life));
+    }
+}
+
 function removeLife(number) {
     this.entity.life -= number;
     if (this.entity.life <= 0)

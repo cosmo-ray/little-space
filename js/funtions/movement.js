@@ -24,22 +24,6 @@ function	Oriantation(x, y)
 
 /*------------------- movement function ------------------------*/
 
-function reoriante(entity, newOriantation)
-{
-    var c = entity.type.sprite;
-    var ctx=c.getContext("2d");
-    //oposite aka sin
-    var nX = entity.oriantation.x - newOriantation.x;
-    //adj aka cos
-    var nY = entity.oriantation.y - newOriantation.y;
-    var hyp = Math.sqrt((nX * nX) + (nY * nY));
-    //var sin = nX / hyp;
-    // i hope it's that
-    var cos = nY / hyp;
-    var rad = math.acos(cos);
-    console.log(rad);
-    ctx.rotate(rad);
-}
 
 function checkOriantation(oriantation)
 {
@@ -54,7 +38,23 @@ function inversVerticalLine(turn, speed, oriantation)
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
-    this.entity.x -= speed * oriantation.x; 
+    this.entity.x -= speed * oriantation.x;
+}
+
+function inversToLeft(turn, speed, oriantation)
+{
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    this.entity.y -= speed * oriantation.y;
+    this.entity.x += speed * oriantation.y;
+}
+
+function inversToRight(turn, speed, oriantation)
+{
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    this.entity.y -= speed * oriantation.y;
+    this.entity.x -= speed * oriantation.y;
 }
 
 function verticalLine(turn, speed, oriantation)

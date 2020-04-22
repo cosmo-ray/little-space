@@ -6,7 +6,7 @@
  * */
 
 var beamRifle = new WeaponType(20, simpleFire, 2, 3, beam);
-var machinGun = new WeaponType(100, simpleFire, 1, 2);
+var machinGun = new WeaponType(100, spam2Fire, 1, 2, bubble_testing);
 var player = new Player(player_testing, new Weapon(beamRifle));
 
 function GameLoop()
