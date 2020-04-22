@@ -5,7 +5,7 @@
  * ----------------------------------------
  * */
 
-var nbPatern = 2;
+var nbPatern = 4;
 var maxSize = 10000;
 var paterns = new Object();
 

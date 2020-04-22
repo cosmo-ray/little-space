@@ -28,6 +28,7 @@
             "js/funtions/Weapon.js",
             "js/funtions/affichage.js",
             "js/define/object.js",
+            "js/game_level/patern04.js",
             "js/game_level/patern03.js",
             "js/game_level/patern02.js",
             "js/game_level/patern01.js",
