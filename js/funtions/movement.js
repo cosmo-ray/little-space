@@ -41,6 +41,23 @@ function inversVerticalLine(turn, speed, oriantation)
     this.entity.x -= speed * oriantation.x;
 }
 
+function inversToUpLeft(turn, speed, oriantation)
+{
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    this.entity.y -= speed * oriantation.y;
+    this.entity.x += (speed * oriantation.y) / 2;
+}
+
+function inversToUpRight(turn, speed, oriantation)
+{
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    this.entity.y -= speed * oriantation.y;
+    this.entity.x -= (speed * oriantation.y) / 2;
+}
+
+
 function inversToLeft(turn, speed, oriantation)
 {
     speed = initSpeed(speed);

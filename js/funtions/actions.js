@@ -110,15 +110,22 @@ function spam2Fire(turn, typeBubble)
 
 	if (this.asignAt.type != player_type)
 	    abort();
+	var lf = inversToLeft
+
+	if (player.entity.speed < 20)
+	    lf = inversToUpLeft
 	playerBulletManager.push(
-	    new Bubble(typeBubble,
-		       inversToLeft,
+	    new Bubble(typeBubble, lf,
 		       this.asignAt.x + this.asignAt.w / 2 - typeBubble.width / 2,
 		       this.asignAt.y - typeBubble.height,
 		       this.type.life));
+	var rf = inversToRight
+
+	if (player.entity.speed < 20)
+	    rf = inversToUpRight
 	playerBulletManager.push(
 	    new Bubble(typeBubble,
-		       inversToRight,
+		       rf,
 		       this.asignAt.x + this.asignAt.w / 2 - typeBubble.width / 2,
 		       this.asignAt.y - typeBubble.height,
 		       this.type.life));
