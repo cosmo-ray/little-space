@@ -1,5 +1,5 @@
 {
-    "name" : "little-space",
+    "name" : "little-mage",
     "pre-load" : [
         { "file" : "html5-emu.js", "type" : "js" },
     ],

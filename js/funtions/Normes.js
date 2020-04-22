@@ -101,9 +101,7 @@ function    Map(audio, randomMap)
 	    //console.log(curTime);
 	    var patern = getPaternFromInt(Math.floor((Math.random()*nbPatern)+1));
 	    print("add patern at:", curTime, " / ", totTime)
-	    that.addPatern(curTime
-			   , patern
-			  );
+	    that.addPatern(curTime, patern);
 	    curTime += patern.length;
 	}
 	//console.log(curTime + " " + totTime);
@@ -118,7 +116,6 @@ function    Map(audio, randomMap)
     apparition["x"] = x;
     apparition['y'] = y;
     apparition['move'] = movementFunction;
-    
     this.monsterApparition[moment].push(apparition);
     };
 
