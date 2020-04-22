@@ -33,6 +33,7 @@ function GameLoop()
 	    return(!loose);
 	});
     };
+    player.score = 0
 
     var isEnd = false;
     var activateKey = new Array;

@@ -15,12 +15,16 @@ function background()
     		      current_screen["height"]);
 }
 
+function draw_text_top(str, pos)
+{
+    drawing.font="22px Georgia";
+    drawing.fillStyle="#FFFFFF";
+    drawing.fillText(str, 10, 20 + (18 * pos));
+}
+
 function write_all() // you change this if you want
 {
     //drawing.clear()
-    print("length: ", monsterManager.length, playerBulletManager.length,
-	  bonusManager.length, effectManager.length)
-
     background();
     player_write();
 
@@ -43,6 +47,8 @@ function write_all() // you change this if you want
 	draw_entity(effectManager[i].entity.x, effectManager[i].entity.y,
 		    effectManager[i].type);
     }
+    draw_text_top("Score: " + player.score, 0);
+    print("score: ", player.score)
 }
 
 function draw_entity(x, y, type)

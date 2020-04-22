@@ -13,6 +13,7 @@ Monster.prototype.deathEffects = function () {
 	createBonus(this);
     effectManager.push(new Effect(this.entity.x, this.entity.y, boum.copy()));
     removeMob(monsterManager.indexOf(this));
+    player.score += 1
 }
 
 function createBonus(monster)

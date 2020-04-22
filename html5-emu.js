@@ -16,6 +16,14 @@ ctx2d.prototype.fillRect = function(x, y, w, h)
     ywCanvasMergeRectangle(ycanvas, x, y, w, h, this.fillStyle)
 }
 
+ctx2d.prototype.fillText = function(txt, x, y, w, h)
+{
+    var ycanvas = js_emu_canvas()
+    var r = 0
+
+    r = ywCanvasMergeText(ycanvas, x, y, w, h,  txt);
+}
+
 function js_emu_canvas()
 {
     return yeGet(yeGet(attached_wid, "entries"), 0)
