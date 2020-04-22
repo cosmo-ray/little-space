@@ -1,9 +1,0 @@
-[INFO]Initiate log file with 0x561b2693d0d0
-[WARNING]Initiate log file with 0x561b2693d0d0
-[ERROR]Initiate log file with 0x561b2693d0d0
-[ERROR][core/description/json-desc.c: jsonFromFile : 126]
-can not open .//start.json, no sure file
-[ERROR][core/game/game.c: ygParseStartAndGame : 926]
-No main widget has been set.
-see documentation about starting_widget
-or set it manually with "ywidSetMainWid()"
