@@ -5,9 +5,10 @@
  * ----------------------------------------
  * */
 
-var beamRifle = new WeaponType(20, simpleFire, 2, 3, beam);
-var machinGun = new WeaponType(100, spam2Fire, 1, 2, bubble_testing);
-var player = new Player(player_testing, new Weapon(beamRifle));
+var beamRifle = new WeaponType("Magic Arrow", null, simpleFire, 2, 3, beam);
+var machinGun = new WeaponType("Windy Gatling", 100, spam2Fire, 1, 2, bubble_testing);
+var machinGun2 = new WeaponType("Storm Gatling", 100, spam2Fire2, 1, 2, bubble_testing);
+var player = new Player(player_testing, beamRifle);
 
 function GameLoop()
 {

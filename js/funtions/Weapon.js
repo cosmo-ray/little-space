@@ -1,9 +1,10 @@
 var	nbrWeaponTypes = 0;
 
-function WeaponType(maxAmunition, fire, rate, domage, bubbleType)
+function WeaponType(name, maxAmunition, fire, rate, domage, bubbleType)
 {
     this.maxAmunition = maxAmunition;
     this.fireType = fire;
+    this.name = name;
     this.rate = rate;
     this.life = domage;
     this.bubbleType = bubbleType;
@@ -15,7 +16,7 @@ function Weapon(type)
 {
     this.oriantationShoot = 0;
     this.type = type;
-    this.amunition = this.type.maxAmmunition;
+    this.amunition = this.type.maxAmunition;
     this.lastShoot = -this.type.rate;
     this.asignAt;
     this.fireType = this.type.fireType;

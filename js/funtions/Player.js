@@ -38,22 +38,35 @@ function Player(type, weapon)
 	}
     }
 
-    this.giveWeapon = function(weapon)
+    this.giveWeapon = function(weapon_t)
     {
-	weapon.asignAt = this.entity;
 	for (i = 0; i < this.weapons.length; ++i)
 	{
-	    if (this.weapons[i].type.id == weapon.type.id)
+	    if (this.weapons[i].type.id == weapon_t.id)
 	    {
-		delete this.weapons[i];
-		this.weapons[i] = weapon;
+		this.weapons[i].amunition += weapon_t.maxAmunition;
 		return;
 	    }
 	}
-	this.weapons.push(weapon);
+	var nw = new Weapon(weapon_t)
+	nw.asignAt = this.entity;
+	this.weapons.push(nw);
     }
     this.giveWeapon(weapon);
 }
+
+Player.prototype.nbAmmo = function(weapon_t)
+{
+    	for (i = 0; i < this.weapons.length; ++i)
+	{
+	    if (this.weapons[i].type.id == weapon_t.id)
+	    {
+		return this.weapons[i].amunition;
+	    }
+	}
+    return 0;
+}
+
 
 Player.prototype.removeLife = removeLife;
 Player.prototype.deathEffects = function () {

@@ -48,7 +48,21 @@ function write_all() // you change this if you want
 		    effectManager[i].type);
     }
     draw_text_top("Score: " + player.score, 0);
-    print("score: ", player.score)
+
+    draw_text_top("----- Spell -----", 1);
+    var i;
+    for (i = 0; player.weapons[i]; ++i) {
+        if (player.weapons[i].amunition !== null)
+            draw_text_top(player.weapons[i].type.name +
+			  ": " + player.weapons[i].amunition,
+                          2 + i);
+        else
+            draw_text_top(player.weapons[i].type.name +
+			  ": unlimited :)",
+                          2 + i);
+
+    }
+    draw_text_top("----- Spell -----", 2 + i);
 }
 
 function draw_entity(x, y, type)

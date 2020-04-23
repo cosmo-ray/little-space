@@ -1,6 +1,7 @@
 function ctx2d()
 {
 }
+
 var cur_ctx2d = new ctx2d()
 var ctx2d_stack = {}
 var ctx2d_i = 0

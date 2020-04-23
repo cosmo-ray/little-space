@@ -65,6 +65,7 @@ function monsterCheckCol() {
 	{
 	    ret = playerBulletManager[i].entity.life;
 	    playerBulletManager[i].removeLife(this.entity.life);
+	    this.bullet_hit = true
 	    return (ret);
 	}
     }
