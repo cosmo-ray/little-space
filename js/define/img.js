@@ -23,8 +23,8 @@ img_player_testing.src = 'images/set_1080/witch.png'
 
 // --- Explosion
 var img_explode_testing = new Image();
-img_explode_testing.src = 'images/explosions_sheet-clouds_2.png';
-var first_boum_pos = new PosSprite(0, 3600, 200, 200);
+img_explode_testing.src = 'images/explosions.png';
+var first_boum_pos = new PosSprite(0, 0, 200, 150);
 
 var spell0 = new Image();
 spell0.src = 'images/blood-magic/Blood-Magic-Effect_04.png';
