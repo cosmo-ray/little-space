@@ -80,7 +80,5 @@ function draw_entity(x, y, type)
 
 function player_write()
 {
-    print("player: ", player.entity.x, player.entity.y, player.type,
-	  current_screen["width"], current_screen["height"])
     draw_entity(player.entity.x, player.entity.y, player.type);
 }

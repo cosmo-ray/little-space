@@ -147,15 +147,12 @@ function GameLoop()
 	{
 	case input.left:
 	    playerAction.x -= player.entity.speed;
-	    print("playerAction.x: ", playerAction.x)
 	    break;
 	case input.right:
 	    playerAction.x += player.entity.speed;
-	    print("playerAction.x: ", playerAction.x)
 	    break;
 	case input.up:
 	    playerAction.y -= player.entity.speed;
-	    print("playerAction.y: ", playerAction.x)
 	    break;
 	case input.down:
 	    playerAction.y += player.entity.speed;

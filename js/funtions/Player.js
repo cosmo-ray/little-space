@@ -72,7 +72,6 @@ Player.prototype.removeLife = removeLife;
 Player.prototype.deathEffects = function () {
     var x = this.entity.x - ((this.type.height - this.type.width) / 2);
 
-    print("DEAD EFFECT !!!")
     if (!this.isDeath) {
 	var playerBoum = new Effect(x, this.entity.y, boum.copy(),
 				    this.deathEffect);

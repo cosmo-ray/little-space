@@ -271,11 +271,11 @@ function js_emu_action(wid, eves)
 
 	    if (ywidEveType(eve) == YKEY_DOWN) {
 		var jsev = new Event_type()
+		print("down", ywidEveKey(eve))
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		kd(jsev)
 	    }
 	    //print("WESH !", eve)
-
 	}
     }
 
@@ -287,7 +287,7 @@ function js_emu_action(wid, eves)
 	    if (ywidEveType(eve) == YKEY_UP) {
 		var jsev = new Event_type()
 
-		print("\nUP: ", jsev.keyCode)
+		print("up", ywidEveKey(eve))
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		ku(jsev)
 	    }
