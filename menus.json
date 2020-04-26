@@ -1,0 +1,35 @@
+{
+    "main" : {
+        "<type>" : "menu",
+        "entries" : [
+            {
+                "text" : "New Game",
+                "next" : "little-mage:little-space",
+                "action" : "menuNext"
+            },
+	    {
+                "text" : "Full Screen",
+                "action" : "FullScreenOnOff"
+            },
+            {
+                "text" : "credit",
+                "next" : "little-mage:menus.credit",
+                "action" : "menuNext"
+            },
+            {
+                "text" : "Quit",
+                "action" : "FinishGame"
+            }
+	],
+        "text-align" : "center",
+        "background" : "rgba: 255 255 255 255"
+    },
+    "credit": {
+	"<type>" : "text-screen",
+	"text": "TODO",
+	"action" : "nextOnKeyDown",
+	"background" : "rgba: 255 255 255 255",
+	"next" : "little-mage:menus.main"
+    }
+
+}

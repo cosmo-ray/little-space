@@ -2,12 +2,13 @@
     "name" : "little-mage",
     "pre-load" : [
         { "file" : "html5-emu.js", "type" : "js" },
+	{ "file" : "menus.json", "type" : "json", "as" : "menus"}
     ],
     "init-scripts" : [
 	["js", "js_emu_init"]
     ],
     "make-prototype": "little-space",
-    "starting widget" : "little-space",
+    "starting widget" : "menus.main",
     "little-space" : {
 	"<type>": "html-emu",
 	"dmod": "little-space",
