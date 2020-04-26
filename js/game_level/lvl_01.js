@@ -9,8 +9,8 @@
 
 /* ---------- LVL I Testing ---------- */
 
-var map = new Map("The Last Encounter (Extended Version).mp3", true);
-var next_map = new Map("battleThemeA.mp3", true)
+var map = new Map("battleThemeA.mp3", true)
+var next_map = new Map("The Last Encounter (Extended Version).mp3", true);
 map.next = next_map
 /* *
  * ----------------------------------------

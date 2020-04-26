@@ -22,6 +22,17 @@ var effectManager = new Array();
 
 var entitysManager = new Array(monsterBulletManager, playerBulletManager, bonusManager, monsterManager, effectManager);
 
+function cleanManager()
+{
+    playerBulletManager.splice(0,playerBulletManager.length)
+    monsterBulletManager.splice(0,monsterBulletManager.length)
+    while(monsterManager.length > 0) {
+	monsterManager[0].deathEffects()
+    }
+    for (i = 0; i < player.weapons.length; ++i)
+	player.weapons[i].lastShoot = -player.weapons[i].type.rate;
+}
+
 function Entity(x, y, w, h, type, speed, life, oriantation)
 {
     //print("new entity: ", x, y, w, h, type, speed, life, oriantation)

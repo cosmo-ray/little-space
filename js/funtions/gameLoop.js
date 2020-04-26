@@ -307,6 +307,15 @@ function GameLoop()
 	if (timeDiff >= 100) {
 	    ret = doPartTurn(true);
 	    if (ret) {
+		print("END ???", map.next, map);
+		if (loose === false && map.next) {
+		    print("THER's a NEXT !!!");
+		    cleanManager()
+		    map = map.next
+		    newLoop = new GameLoop;
+		    newLoop.exec();
+		    return false
+		}
 		isEnd = true
 		if (is_yirl)
 		    var qf = yeGet(attached_wid, "quit")
@@ -326,7 +335,6 @@ function GameLoop()
     };
 
     /*var game = setInterval(doTurn, 100);*/
-
 }
 
 // Game Start
