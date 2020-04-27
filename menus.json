@@ -4,7 +4,7 @@
         "entries" : [
             {
                 "text" : "New Game",
-                "next" : "little-mage:little-space",
+		"next" : "little-mage:menus.start_txt",
                 "action" : "menuNext"
             },
 	    {
@@ -22,14 +22,36 @@
             }
 	],
         "text-align" : "center",
-        "background" : "rgba: 255 255 255 255"
+        "background" : "pepper-and-carrot-2.png"
     },
     "credit": {
 	"<type>" : "text-screen",
-	"text": "TODO",
+	"text": [
+	    "Based on the webcomic Pepper&Carrot CC-BY David Revoy",
+	    "Background by 'Crecs': https://opengameart.org/users/crecs"],
 	"action" : "nextOnKeyDown",
-	"background" : "rgba: 255 255 255 255",
+	"background" : "./splash-of-pepper-8.png",
 	"next" : "little-mage:menus.main"
+    },
+    "start_txt" : {
+        "<type>" : "text-screen",
+        "text-align": "center",
+        "action" : "nextOnKeyDown",
+        "background" : "pepper-and-carrot-2.png",
+	"text-speed": 100000,
+	"turn-length": 100000,
+	"text": [
+	    "Pepper is chiling like you can see on this picture",
+	    "while sudenly...",
+	    "Something happen !",
+	    "So Pepper decide to go in an adventure looking for suff",
+	    "She take her broom, and leave, destination:\n",
+	    "SOMEPLACE",
+	    "but on her way, she encounter unknow enemies that look like the kind",
+	    "of art you find when looking for shoot'em up sprite on opengameart",
+	    "\n\n\n",
+	    "In the meantime, carrot is taking a nap\nGood Luck !"
+	],
+        "next" : "little-mage:little-space"
     }
-
 }
