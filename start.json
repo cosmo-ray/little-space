@@ -13,6 +13,8 @@
     "starting widget" : "menus.main",
     "little-space" : {
 	"<type>": "html-emu",
+	"quit": "callNext",
+	"next" : "little-mage:menus.main",
 	"dmod": "little-space",
 	"files": [
 	    "js/funtions/Normes.js",

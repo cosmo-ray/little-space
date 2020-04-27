@@ -317,13 +317,16 @@ function GameLoop()
 		    return false
 		}
 		isEnd = true
-		if (is_yirl)
+		if (is_yirl) {
 		    var qf = yeGet(attached_wid, "quit")
 		    if (qf) {
+			if (yeType(qf) == YSTRING )
+			    qf = ygGet(yeGetString(qf));
 			yesCall(qf, attached_wid)
 		    } else {
 			yesCall(ygGet("FinishGame"))
 		    }
+		}
 		return ret;
 	    }
 	    beginTime += timeDiff;
