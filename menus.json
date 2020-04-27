@@ -53,8 +53,8 @@
 	"<type>" : "text-screen",
 	"text": [
 	    "Based on the webcomic Pepper&Carrot CC-BY David Revoy",
-	    "Background by 'Crecs': https://opengameart.org/users/crecs",
-	    "Pepper Sprite: The of the Devlopper Girlfriend, CC-0",
+	    "Background by 'Crecs': https://opengameart.org/users/crecs CC-BY-4",
+	    "Pepper Sprite: Devlopper Girlfriend (who's learning stuff durring confinement), CC-0",
 	    "Programmer: The Stupide and very suseptible Pepper Sprite Artist Boyfriend","\n\n\n\n","I Use Arch Linux BTW !"],
 	"action" : "nextOnKeyDown",
 	"background" : "./splash-of-pepper-8.png",
