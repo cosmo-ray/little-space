@@ -29,11 +29,12 @@ Bonus.prototype.removeLife = function (type) {
 
 function giveMachinGun()
 {
+    if (player.nbAmmo(machinGun) > 70)
+	player.giveWeapon(machinGun3);
     if (player.nbAmmo(machinGun) > 300)
 	player.giveWeapon(machinGun2);
     else
 	player.giveWeapon(machinGun);
-
 }
 
 function giveGreaterBonus()

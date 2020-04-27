@@ -79,7 +79,24 @@ function verticalLine(turn, speed, oriantation)
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y += speed * oriantation.y;
-    this.entity.x += speed * oriantation.x; 
+    this.entity.x += speed * oriantation.x;
+}
+
+function oddShoot(turn, speed, oriantation)
+{
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    if (!this.entity.acc_x)
+	this.entity.acc_x = 0;
+    var yadd = speed * oriantation.y;
+    this.entity.y -= yadd;
+
+    if (this.entity.acc_x < 90) {
+	this.entity.x += yadd;
+	this.entity.acc_x += yadd;
+    } else {
+	this.entity.x += speed * oriantation.x;
+    }
 }
 
 function zigzag(turn, speed, oriantation)

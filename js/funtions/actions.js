@@ -119,6 +119,31 @@ function simpleFire(turn, typeBubble)
 }
 
 
+function oddFire(turn, typeBubble)
+{
+    if (!typeBubble)
+	typeBubble = bubble_testing;
+    if (this.amunition == 0)
+	return;
+    print(this.amunition, this.name)
+    if ((turn - this.lastShoot) >  this.type.rate)
+    {
+	this.lastShoot = turn;
+	decreaseAmunition(this, 2)
+	if (this.asignAt.type == player_type)
+            var line = oddShoot;
+	var bubble = new Bubble(typeBubble,
+				line, this.asignAt.x + this.asignAt.w /
+				2 - typeBubble.width / 2,
+				this.asignAt.y - typeBubble.height,
+				this.type.life
+			       )
+	if (this.asignAt.type == player_type)
+            playerBulletManager.push(bubble);
+    }
+}
+
+
 function spam2Fire2(turn, typeBubble)
 {
     if (this.amunition == 0)
