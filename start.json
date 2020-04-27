@@ -1,5 +1,7 @@
 {
     "name" : "little-mage",
+    "window size" : [800, 600],
+    "window name" : "Pewpew and Pepper",
     "pre-load" : [
         { "file" : "html5-emu.js", "type" : "js" },
 	{ "file" : "menus.json", "type" : "json", "as" : "menus"}
