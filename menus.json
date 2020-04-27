@@ -12,6 +12,11 @@
                 "action" : "FullScreenOnOff"
             },
             {
+                "text" : "How to play",
+                "next" : "little-mage:menus.How to play",
+                "action" : "menuNext"
+            },
+            {
                 "text" : "credit",
                 "next" : "little-mage:menus.credit",
                 "action" : "menuNext"
@@ -24,11 +29,31 @@
         "text-align" : "center",
         "background" : "pepper-and-carrot-2.png"
     },
+    "How to play": {
+	"<type>" : "text-screen",
+	"text": [
+	    "The goal of the game is to survive while killing bad creatur",
+	    "to do so, you most avoir them by moving using arroy key or controller dpad",
+	    "Devloper been bad at programing, axies are buggy(at last was when I write that)",
+	    "in order to shoot them, you must press 'SPACEEEEE', or Y key",
+	    "why Y ? because ... well... DON'T ASK QUESTIONS I DON'T LIKE",
+	    "shift(shift is the key on a keyboard with an up arrow on it) and ctrl also do stuff",
+	    "You will also need to navigate menu, to do so, you need to use arrow key",
+	    "and enter key, or if you use controller, A to selection, dpad to move\naxies workfor menu",
+	    "Full Screen work most of the time, bu bug on ratpoison",
+	    "As a last note, if you don't know how to play, you should read the 'How to Play' Screen"
+	],
+	"action" : "nextOnKeyDown",
+	"background" : "./splash-of-pepper-alt.png",
+	"next" : "little-mage:menus.main"
+    },
     "credit": {
 	"<type>" : "text-screen",
 	"text": [
 	    "Based on the webcomic Pepper&Carrot CC-BY David Revoy",
-	    "Background by 'Crecs': https://opengameart.org/users/crecs"],
+	    "Background by 'Crecs': https://opengameart.org/users/crecs",
+	    "Pepper Sprite: The Girlfriend of the Devlopper, CC-0",
+	    "Devlopement: The Stupide and very suseptible Boyfriend of Pepper Sprite artist"],
 	"action" : "nextOnKeyDown",
 	"background" : "./splash-of-pepper-8.png",
 	"next" : "little-mage:menus.main"
@@ -44,7 +69,7 @@
 	    "Pepper is chiling like you can see on this picture",
 	    "while sudenly...",
 	    "Something happen !",
-	    "So Pepper decide to go in an adventure looking for suff",
+	    "So Pepper decide to go in an adventure looking for The Suff of better stats +2",
 	    "She take her broom, and leave, destination:\n",
 	    "SOMEPLACE",
 	    "but on her way, she encounter unknow enemies that look like the kind",
