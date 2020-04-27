@@ -32,15 +32,17 @@
     "How to play": {
 	"<type>" : "text-screen",
 	"text": [
-	    "The goal of the game is to survive while killing bad creatur",
-	    "to do so, you most avoir them by moving using arroy key or controller dpad",
-	    "Devloper been bad at programing, axies are buggy(at last was when I write that)",
+	    "The goal of the game is to survive while killing bad creatures",
+	    "to do so, you most avoid them by moving using arroy key or controller dpad",
+	    "Devlopper been bad at programming, axies are buggy(at last was when I write that)",
 	    "in order to shoot them, you must press 'SPACEEEEE', or Y key",
 	    "why Y ? because ... well... DON'T ASK QUESTIONS I DON'T LIKE",
-	    "shift(shift is the key on a keyboard with an up arrow on it) and ctrl also do stuff",
+	    "shif and ctrl also do stuff that are not documented here",
 	    "You will also need to navigate menu, to do so, you need to use arrow key",
-	    "and enter key, or if you use controller, A to selection, dpad to move\naxies workfor menu",
-	    "Full Screen work most of the time, bu bug on ratpoison",
+	    "and enter key, or if you use controller, A to selection, dpad to move",
+	    "Axies work here (because Devlopper is good at programming)",
+	    "Full Screen work most of the time, but bug on ratpoison",
+	    "Brian Lunduke is very wrong when he say ratpoison is bad",
 	    "As a last note, if you don't know how to play, you should read the 'How to Play' Screen"
 	],
 	"action" : "nextOnKeyDown",
@@ -52,8 +54,8 @@
 	"text": [
 	    "Based on the webcomic Pepper&Carrot CC-BY David Revoy",
 	    "Background by 'Crecs': https://opengameart.org/users/crecs",
-	    "Pepper Sprite: The Girlfriend of the Devlopper, CC-0",
-	    "Devlopement: The Stupide and very suseptible Boyfriend of Pepper Sprite artist"],
+	    "Pepper Sprite: The of the Devlopper Girlfriend, CC-0",
+	    "Programmer: The Stupide and very suseptible Pepper Sprite Artist Boyfriend","\n\n\n\n","I Use Arch Linux BTW !"],
 	"action" : "nextOnKeyDown",
 	"background" : "./splash-of-pepper-8.png",
 	"next" : "little-mage:menus.main"
