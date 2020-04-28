@@ -109,7 +109,7 @@ function oddShoot(turn, speed)
     var yadd = speed * oriantation.y;
     this.entity.y -= yadd;
 
-    if (this.entity.acc_x < 90) {
+    if (this.entity.acc_x < 70) {
 	this.entity.x += speed * oriantation.x;
 	this.entity.acc_x += speed;
     }
