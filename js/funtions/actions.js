@@ -44,10 +44,7 @@ function Entity(x, y, w, h, type, speed, life, oriantation)
     this.movementUtil = new Array;
     this.speed = speed;
     this.life = life;
-    if (!oriantation)
-	this.oriant = new Oriantation(0, 1);
-    else
-	this.oriant = oriantation;
+    this.oriant = oriantation;
 }
 
 Entity.prototype.pCheckButomOutOfMap = function () {
@@ -136,10 +133,16 @@ function oddFire(turn, typeBubble)
 				line, this.asignAt.x + this.asignAt.w /
 				2 - typeBubble.width / 2,
 				this.asignAt.y - typeBubble.height,
-				this.type.life
-			       )
-	if (this.asignAt.type == player_type)
-            playerBulletManager.push(bubble);
+				this.type.life, new Oriantation(-1, 1)
+			       );
+        playerBulletManager.push(bubble);
+	var bubble = new Bubble(typeBubble,
+				line, this.asignAt.x + this.asignAt.w /
+				2 - typeBubble.width / 2,
+				this.asignAt.y - typeBubble.height,
+				this.type.life, new Oriantation(1, 1)
+			       );
+        playerBulletManager.push(bubble);
     }
 }
 

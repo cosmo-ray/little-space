@@ -1,10 +1,10 @@
 /* *
- * ---------------------------------------- 
- * JS du projet Little Space 
- * V0.0.01 | 07052013 
- * 
+ * ----------------------------------------
+ * JS du projet Little Space
+ * V0.0.01 | 07052013
+ *
  *                                  ==> IN
- * ---------------------------------------- 
+ * ----------------------------------------
  * */
 
 /*------------------- global function for movement -------------*/
@@ -24,33 +24,41 @@ function	Oriantation(x, y)
 
 /*------------------- movement function ------------------------*/
 
+baseOrientation = new Oriantation(0, 1)
 
 function checkOriantation(oriantation)
 {
     if (!oriantation)
     {
-	return (new Oriantation(0, 1));
+	return (baseOrientation);
     }
+    return oriantation
 }
 
-function inversVerticalLine(turn, speed, oriantation)
+function inversVerticalLine(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
     this.entity.x -= speed * oriantation.x;
 }
 
-function inversToUpLeft(turn, speed, oriantation)
+function inversToUpLeft(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
     this.entity.x += (speed * oriantation.y) / 2;
 }
 
-function inversToUpRight(turn, speed, oriantation)
+function inversToUpRight(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
@@ -58,49 +66,59 @@ function inversToUpRight(turn, speed, oriantation)
 }
 
 
-function inversToLeft(turn, speed, oriantation)
+function inversToLeft(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
     this.entity.x += speed * oriantation.y;
 }
 
-function inversToRight(turn, speed, oriantation)
+function inversToRight(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y -= speed * oriantation.y;
     this.entity.x -= speed * oriantation.y;
 }
 
-function verticalLine(turn, speed, oriantation)
+function verticalLine(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     this.entity.y += speed * oriantation.y;
     this.entity.x += speed * oriantation.x;
 }
 
-function oddShoot(turn, speed, oriantation)
+function oddShoot(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
+    print(oriantation)
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     if (!this.entity.acc_x)
 	this.entity.acc_x = 0;
+
     var yadd = speed * oriantation.y;
     this.entity.y -= yadd;
 
     if (this.entity.acc_x < 90) {
-	this.entity.x += yadd;
-	this.entity.acc_x += yadd;
-    } else {
 	this.entity.x += speed * oriantation.x;
+	this.entity.acc_x += speed;
     }
 }
 
-function zigzag(turn, speed, oriantation)
+function zigzag(turn, speed)
 {
+    var oriantation = this.entity.oriant
+
     oriantation = checkOriantation(oriantation);
     speed = initSpeed(speed);
     if (this.entity["movementUtil"].length == 0)
@@ -121,7 +139,8 @@ function zigzag(turn, speed, oriantation)
 
 function slow_zigzag(turn, speed, oriantation)
 {
-    oriantation = checkOriantation(oriantation);
+    var oriantation = checkOriantation(this.entity.oriant);
+
     speed = initSpeed(speed);
     if (this.entity["movementUtil"].length == 0)
     {
