@@ -34,13 +34,14 @@
 	"text": [
 	    "The goal of the game is to survive while killing bad creatures",
 	    "to do so, you most avoid them by moving using arroy key or controller dpad",
-	    "Devlopper been bad at programming, axies are buggy(at last was when I write that)",
+	    "Developer been bad at programming, axies are buggy (it is stupide, so stupide)",
 	    "in order to shoot them, you must press 'SPACEEEEE', or Y key",
 	    "why Y ? because ... well... DON'T ASK QUESTIONS I DON'T LIKE",
 	    "shif and ctrl also do stuff that are not documented here",
+	    "Blue(blue is a color) Cristal are bonus, you should not avoid them",
 	    "You will also need to navigate menu, to do so, you need to use arrow key",
 	    "and enter key, or if you use controller, A to selection, dpad to move",
-	    "Axies work here (because Devlopper is good at programming)",
+	    "Axies work here (because Developer is good at programming)",
 	    "Full Screen work most of the time, but bug on ratpoison",
 	    "Brian Lunduke is very wrong when he say ratpoison is bad",
 	    "As a last note, if you don't know how to play, you should read the 'How to Play' Screen"
@@ -52,11 +53,11 @@
     "credit": {
 	"<type>" : "text-screen",
 	"text": [
-	    "Based on the webcomic Pepper&Carrot CC-BY David Revoy",
+	    "Based on the webcomic Pepper&Carrot https://www.peppercarrot.com/en/ CC-BY by David Revoy",
 	    "Background by 'Crecs': https://opengameart.org/users/crecs CC-BY-4",
 	    "Monster: https://opengameart.org/content/colorful-spaceships CC-0 by den_yes",
 	    "Explosion: https://opengameart.org/content/explosion-clouds, GPL [2|3] or [CC|OGA]-BY[-SA] 3 by Varkalandar",
-	    "Boss (not sure I'll have time to integrate him): https://opengameart.org/content/mage-1 CC-BY 4.0 by BlackSwordo",
+	    "Boss: https://opengameart.org/content/mage-1 CC-BY 4.0 by BlackSwordo",
 	    "Pepper Sprite: Devlopper Girlfriend (who's learning stuff durring confinement), CC-0",
 	    "Programmer: The Stupide and very suseptible Pepper Sprite Artist Boyfriend","\n\n\n\n","I Use Arch Linux BTW !"],
 	"action" : "nextOnKeyDown",
