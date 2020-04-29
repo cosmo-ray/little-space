@@ -109,6 +109,7 @@ function GameLoop()
 	if (this.boom && player.bombs) {
 	    // My Very Best Friend
 	    player.bombs -= 1;
+	    this.boom = false
 
 	    for (var i = -1; i < 1; i += 0.1) {
 		print("shoot ", i, "\n")
@@ -139,6 +140,7 @@ function GameLoop()
 	x:0,
 	y:0,
 	shoot:false,
+	boom:false,
 	init: initPlayerAction,
 	exec: execPlayerAction,
 	partExec : partExecPlayerAction
