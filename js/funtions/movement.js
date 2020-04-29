@@ -100,7 +100,6 @@ function oddShoot(turn, speed)
 {
     var oriantation = this.entity.oriant
 
-    print(oriantation)
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     if (!this.entity.acc_x)

@@ -13,6 +13,9 @@ var machinGun3 = new WeaponType("Storm Gatling2", 30, oddFire, 1, 2, bubble_test
 var player = new Player(player_testing, beamRifle);
 player.giveWeapon(machinGun3);
 
+var current_level = 0
+var level_percent = 0
+
 function GameLoop()
 {
     var that = this;
@@ -268,13 +271,12 @@ function GameLoop()
     {
 	if (loose)
 	    return 2;
-	//console.log(lenght* 1000);
-	//console.log(beginTime + timeDiff);
 	totTime += ctime - beginTime
 	if (totTime >= lenght * 1000) {
 	    print("YOU WIN !!!!")
 	    return 1;
 	}
+	level_percent = totTime * 100 / (lenght * 1000)
 	/*player turn*/
 	playerAction.exec();
 	/*!player turn*/
@@ -313,11 +315,12 @@ function GameLoop()
 		print("END ???", map.next, map);
 		if (loose === false && map.next) {
 		    print("THER's a NEXT !!!");
-		    cleanManager()
-		    map = map.next
+		    current_level += 1;
+		    cleanManager();
+		    map = map.next;
 		    newLoop = new GameLoop;
 		    newLoop.exec();
-		    return false
+		    return false;
 		}
 		isEnd = true
 		if (is_yirl) {
