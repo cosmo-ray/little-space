@@ -23,6 +23,8 @@ img_ship1.src = 'images/Spaceship005.png';
 
 var img_boss = new Image();
 img_boss.src = 'images/boss0.png';
+var img_boss_hurt = new Image();
+img_boss_hurt.src = 'images/boss0-1.png';
 
 var img_player_testing = new Image();
 img_player_testing.src = 'images/set_1080/witch.png'

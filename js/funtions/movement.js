@@ -129,6 +129,8 @@ function boss0_attack(turn, speed)
 
     if (te.life < 50) {
 	var bb = mbubble
+
+	this.type = boss0_hurt
 	var o = new Oriantation(0.5 * (turn & 15) , 1)
 	var b = new Bubble(bb, verticalLine,
 			   te.x + te.w / 2 - bb.width / 2,

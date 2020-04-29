@@ -15,8 +15,3 @@ var next_map = new Map("The Last Encounter (Extended Version).mp3", true);
 map.next = map1
 map1.next = next_map
 
-/* *
- * ----------------------------------------
- *                                  <== OUT
- * ----------------------------------------
- * */

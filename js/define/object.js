@@ -5,6 +5,7 @@ var fast_ship_testing = addType(27, 30, img_ship_testing, 30);
 var ship1 = addType(27, 30, img_ship1, 10);
 
 var boss0 = addType(70, 90, img_boss, 12);
+var boss0_hurt = addType(70, 90, img_boss_hurt, 12);
 
 var player_testing = addType(30, 60, img_player_testing, 25);
 

@@ -60,7 +60,11 @@
 	    "Boss: https://opengameart.org/content/mage-1 CC-BY 4.0 by BlackSwordo",
 	    "Spells: https://opengameart.org/content/blood-magic-effect CC0 by Cethiel (and some small modifacations by me)",
 	    "Pepper Sprite: Devlopper Girlfriend (who's learning stuff durring confinement), CC-0",
-	    "Programmer: The Stupide and very suseptible Pepper Sprite Artist Boyfriend","\n\n\n\n","I Use Arch Linux BTW !"],
+	    "Programmer: The Stupide and very suseptible Pepper Sprite Artist Boyfriend, WTFPL",
+	    "\n\n\n\n",
+	    "PS: Licence been very free, you can use the code in a proprietary game",
+	    "but This Just Can't Be Right",
+	    "PPS: I Use Arch Linux BTW !"],
 	"action" : "nextOnKeyDown",
 	"background" : "./splash-of-pepper-8.png",
 	"next" : "little-mage:menus.main"
@@ -81,6 +85,7 @@
 	    "SOMEPLACE",
 	    "but on her way, she encounter unknow enemies that look like the kind",
 	    "of art you find when looking for shoot'em up sprite on opengameart",
+	    "If she win, That  Would be Truly Wonderful",
 	    "\n\n\n",
 	    "In the meantime, carrot is taking a nap\nGood Luck !"
 	],
