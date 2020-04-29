@@ -109,14 +109,14 @@ function    Map(audio, randomMap)
 
     this.addMob = function(moment, type, movementFunction, x, y)
     {
-    var apparition = new Object;
+	var apparition = new Object;
 
-    if(typeof(y)==='undefined') y = 0;
-    apparition["type"] = type;
-    apparition["x"] = x;
-    apparition['y'] = y;
-    apparition['move'] = movementFunction;
-    this.monsterApparition[moment].push(apparition);
+	if(typeof(y)==='undefined') y = 0;
+	apparition["type"] = type;
+	apparition["x"] = x;
+	apparition['y'] = y;
+	apparition['move'] = movementFunction;
+	this.monsterApparition[moment].push(apparition);
     };
 
     this.addPatern = function(moment, patern)

@@ -271,7 +271,6 @@ function js_emu_action(wid, eves)
 
 	    if (ywidEveType(eve) == YKEY_DOWN) {
 		var jsev = new Event_type()
-		print("down", ywidEveKey(eve))
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		kd(jsev)
 	    }
