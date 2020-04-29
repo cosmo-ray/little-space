@@ -21,6 +21,9 @@ img_ship_testing.src = 'images/Spaceship004.png';
 var img_ship1 = new Image();
 img_ship1.src = 'images/Spaceship005.png';
 
+var img_boss = new Image();
+img_boss.src = 'images/boss0.png';
+
 var img_player_testing = new Image();
 img_player_testing.src = 'images/set_1080/witch.png'
 
@@ -31,7 +34,6 @@ var first_boum_pos = new PosSprite(0, 0, 190, 150);
 
 var spell0 = new Image();
 spell0.src = 'images/blood-magic/Blood-Magic-Effect_04.png';
-print(img_explode_testing.src)
 
 var spell1 = new Image();
 spell1.src = 'images/blood-magic/Blood-Magic-Effect_06.png';

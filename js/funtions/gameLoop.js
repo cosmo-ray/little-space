@@ -27,7 +27,7 @@ function GameLoop()
 	audio.addEventListener('loadedmetadata', function() {
 	    print("AUDIO DUATION: ", lenght, audio.duration)
 	    lenght = audio.duration;
-	    if (map.randomMap)
+	    if (map.randomMap === true)
 	    {
 		map.length = lenght;
 		//map.length = 3;
@@ -209,6 +209,10 @@ function GameLoop()
 	{
 	    return ;
 	}
+
+	if (monster.isBoss)
+	    map.boss_life = monster.entity.life
+
 	if (monsterPartialMovementVal > 1)
 	{
 	    speed = Math.floor(monsterPartialMovementVal);
@@ -226,7 +230,7 @@ function GameLoop()
     function bonusPartTurn(bonus, index, array)
     {
 	var speed = getAvancement(bonus.entity.speed, tdGetPourcentTurn());
-	bonus.move(this.turn, speed);
+	bonus.move(that.turn, speed);
 	var domage = bonus.checkCol();
 	if (domage !== 0)
 	{
@@ -243,7 +247,7 @@ function GameLoop()
     function playerBubblePartTurn(bubble, index, array)
     {
 	var speed = getAvancement(bubble.entity.speed, tdGetPourcentTurn());
-	bubble.move(this.turn, speed);
+	bubble.move(that.turn, speed);
     }
 
     function nullTurn()
@@ -286,7 +290,7 @@ function GameLoop()
 	if (loose)
 	    return 2;
 	totTime += ctime - beginTime
-	if (totTime >= lenght * 1000) {
+	if (totTime >= lenght * 1000 || map.win_boss) {
 	    print("YOU WIN !!!!")
 	    return 1;
 	}
@@ -303,8 +307,12 @@ function GameLoop()
 	    var nm = new Monster(map.monsterApparition[that.turn][i2].x,
 				 map.monsterApparition[that.turn][i2].y,
 				 map.monsterApparition[that.turn][i2].type,
-				 map.monsterApparition[that.turn][i2].move)
+				 map.monsterApparition[that.turn][i2].move,
+				 map.monsterApparition[that.turn][i2].isBoss,
+				 map.monsterApparition[that.turn][i2].life)
 	    monsterManager.push(nm);
+	    if (nm.isBoss)
+		map.boss_life = nm.entity.life
 	}
 	write_all();
     }

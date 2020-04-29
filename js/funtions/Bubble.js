@@ -1,7 +1,5 @@
 function Bubble(type, move, x, y, power, o, isPjBb)
 {
-    if (o)
-	print("x:", o.x, "y:", o.y)
     this.entity =
 	new Entity(x, y, type.width, type.height, playerBubble_type,
                    type.speed, power, o);

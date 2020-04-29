@@ -96,6 +96,51 @@ function verticalLine(turn, speed)
     this.entity.x += speed * oriantation.x;
 }
 
+function boss0_attack(turn, speed)
+{
+    var te = this.entity
+    if (!this.acc_y) {
+	this.acc_y = 0;
+	this.turn = 0;
+	this.dir = 0
+    }
+
+    if (this.acc_y < 200) {
+	te.y += speed;
+	this.acc_y += speed;
+    } else if (this.dir == 0) {
+	te.x += speed;
+	if ((te.x + te.w) > (current_screen["width"]))
+	    this.dir = 1
+    } else {
+	te.x -= speed;
+	if (te.x < 0)
+	    this.dir = 0
+    }
+
+    if ((this.turn & 7) == 0) {
+	var bb = mbubble
+	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height, 100, null, true)
+	monsterBulletManager.push(b);
+    }
+
+    if (te.life < 50) {
+	var bb = mbubble
+	var o = new Oriantation(0.5 * (this.turn & 15) , 1)
+	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height, 100, o, true)
+	monsterBulletManager.push(b);
+	var o = new Oriantation(-0.5 * (this.turn & 15) , 1)
+	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height, 100, o, true)
+	monsterBulletManager.push(b);
+    }
+
+    this.turn += 1;
+
+}
+
 function verticalShooter(turn, speed)
 {
     var oriantation = this.entity.oriant
@@ -107,7 +152,6 @@ function verticalShooter(turn, speed)
 	this.shoot_cnt += 1
     }
     if (this.shoot_cnt == 1) {
-	print("Monster shoot !!!!!")
 	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
 			   te.y - bb.height, 100, null, true)
 	monsterBulletManager.push(b);

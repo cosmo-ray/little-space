@@ -69,13 +69,21 @@ function write_all() // you change this if you want
 
     }
     draw_text_top("----- Spell -----", 2 + i);
-    drawing.fillText("Level " + current_level +  ": ", current_screen["width"] - 300, 10);
     drawing.fillStyle = "#000";
     drawing.fillRect(current_screen["width"] - 200, 10,
 		     150, 20);
+    var bl = (level_percent * 146 / 100)
+    if (map.randomMap === 2) {
+	drawing.fillText("Boss !(lvl" + current_level +  "): ",
+			 current_screen["width"] - 300, 10);
+	bl = map.boss_life * 146 / 200;
+    } else {
+	drawing.fillText("Level " + current_level +  ": ",
+			 current_screen["width"] - 300, 10);
+    }
     drawing.fillStyle = "#ffffff";
     drawing.fillRect(current_screen["width"] - 198, 12,
-		     (level_percent * 146 / 100), 16);
+		     bl, 16);
 }
 
 function draw_entity(x, y, type)

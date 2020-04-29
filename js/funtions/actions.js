@@ -214,6 +214,7 @@ function spam2Fire(turn, typeBubble)
 }
 
 function removeLife(number) {
+    print("dmg: ", this.entity.life, number)
     this.entity.life -= number;
     if (this.entity.life <= 0)
 	this.deathEffects();

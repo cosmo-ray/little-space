@@ -115,7 +115,7 @@ function    Map(audio, randomMap, paternFirst, paternLast)
 	//console.log(curTime + " " + totTime);
     }
 
-    this.addMob = function(moment, type, movementFunction, x, y)
+    this.addMob = function(moment, type, movementFunction, x, y, life, isBoss)
     {
 	var apparition = new Object;
 
@@ -124,6 +124,9 @@ function    Map(audio, randomMap, paternFirst, paternLast)
 	apparition["x"] = x;
 	apparition['y'] = y;
 	apparition['move'] = movementFunction;
+	apparition["isBoss"] = isBoss
+	apparition["life"] = life
+
 	this.monsterApparition[moment].push(apparition);
     };
 
@@ -138,6 +141,13 @@ function    Map(audio, randomMap, paternFirst, paternLast)
 			, patern.monsterApparition[i].y);
 	}
     };
+    if (randomMap === 2) {
+	var t = paternFirst
+	var boss = this.addMob(0, t, paternLast,
+			       current_screen["width"] / 2 - (t.width / 2),
+			       0, 200, true)
+    }
+
 }
 
 /* ---------- ! ---------- */

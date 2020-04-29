@@ -1,9 +1,13 @@
-function Monster(x, y, type, move)
+function Monster(x, y, type, move, isBoss, life)
 {
+    if (!life)
+	life = 2
+
     this.entity = new Entity(x, y, type.width, type.height,
-			     monster_type, type.speed, 2);
+			     monster_type, type.speed, life);
     this.type = type;
     this.move = move;
+    this.isBoss = isBoss;
 }
 
 Monster.prototype.checkCol = monsterCheckCol;
@@ -12,6 +16,8 @@ Monster.prototype.removeLife = removeLife;
 Monster.prototype.deathEffects = function () {
     if (this.bullet_hit === true)
 	player.score += 1
+    if (this.isBoss)
+	map.win_boss = true;
     if (Math.floor((Math.random()*100)) < 10)
 	createBonus(this);
     effectManager.push(new Effect(this.entity.x, this.entity.y, boum.copy()));

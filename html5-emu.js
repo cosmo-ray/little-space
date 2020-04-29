@@ -274,7 +274,6 @@ function js_emu_action(wid, eves)
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		kd(jsev)
 	    }
-	    //print("WESH !", eve)
 	}
     }
 
