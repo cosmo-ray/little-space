@@ -39,7 +39,11 @@ function giveMachinGun()
 
 function giveGreaterBonus()
 {
-    giveMachinGun();
-    giveMachinGun();
-    giveMachinGun();
+    if (Math.floor((Math.random()*100)) < 70) {
+	giveMachinGun();
+	giveMachinGun();
+	giveMachinGun();
+    } else {
+	player.bombs += 1
+    }
 }

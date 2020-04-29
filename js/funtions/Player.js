@@ -19,6 +19,7 @@ function Player(type, weapon)
     this.type = type;
     this.checkCol = playerCheckCol;
     this.isDeath = false;
+    this.bombs = 1;
     this.weapons = new Array();
     this.deathEffect = null;
 

@@ -106,6 +106,33 @@ function GameLoop()
 	{
 	    player.fire(that.turn, 0);
 	}
+	if (this.boom && player.bombs) {
+	    // My Very Best Friend
+	    player.bombs -= 1;
+
+	    for (var i = -1; i < 1; i += 0.1) {
+		print("shoot ", i, "\n")
+		var pe = player.entity
+		playerBulletManager.push(
+		    new Bubble(bubble_testing, verticalLine,
+			       pe.x + pe.w /  2 - bubble_testing.width / 2,
+			       pe.y - bubble_testing.height,
+			       2, new Oriantation(i, -1)
+			      ));
+		playerBulletManager.push(
+		    new Bubble(slower_bb, verticalLine,
+			       pe.x + pe.w /  2 - slower_bb.width / 2,
+			       pe.y - slower_bb.height,
+			       2, new Oriantation(i, -1)
+			      ));
+		playerBulletManager.push(
+		    new Bubble(slow_bb, verticalLine,
+			       pe.x + pe.w /  2 - slow_bb.width / 2,
+			       pe.y - slow_bb.height,
+			       2, new Oriantation(i, -1)
+			      ));
+	    }
+	}
     }
 
     var playerAction = {
@@ -151,28 +178,38 @@ function GameLoop()
     {
 	switch (key)
 	{
-	case input.left:
+	    case input.left:
 	    playerAction.x -= player.entity.speed;
 	    break;
-	case input.right:
+
+	    case input.right:
 	    playerAction.x += player.entity.speed;
 	    break;
-	case input.up:
+
+	    case input.up:
 	    playerAction.y -= player.entity.speed;
 	    break;
-	case input.down:
+
+	    case input.down:
 	    playerAction.y += player.entity.speed;
 	    break;
-	case input.space:
+
+	    case input.space:
 	    playerAction.shoot = true;
 	    break;
-	case input.reorianteRight:
+
+	    case input.x:
+	    playerAction.boom = true;
+	    break;
+
+	    case input.reorianteRight:
 	    player.oriantationShoot = player.reorianteShoot(-10);
 	    break;
-	case input.reorianteLeft:
+
+	    case input.reorianteLeft:
 	    player.oriantationShoot = player.reorianteShoot(10);
 	    break;
-	default:
+	    default:
 	    //console.log(key);
 	    break;
 	}

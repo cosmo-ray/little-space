@@ -69,6 +69,7 @@ function write_all() // you change this if you want
 
     }
     draw_text_top("----- Spell -----", 2 + i);
+    draw_text_top("My Very Best Friend: " + player.bombs, 3 + i);
     drawing.fillStyle = "#000";
     drawing.fillRect(current_screen["width"] - 200, 10,
 		     150, 20);
