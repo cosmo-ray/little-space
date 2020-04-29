@@ -1,9 +1,17 @@
-/* *
- * ----------------------------------------
- * JS du projet Little Space
- * V0.0.01 | 01052013
- * ----------------------------------------
- * */
+/*           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ *                   Version 2, December 2004
+ * 
+ *Copyright (C) 2020 Matthias Gatto <uso.cosmo.ray@gmail.com>
+ *
+ *Everyone is permitted to copy and distribute verbatim or modified
+ *copies of this license document, and changing it is allowed as long
+ *as the name is changed.
+ * 
+ *           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+ *
+ * 0. You just DO WHAT THE FUCK YOU WANT TO.
+ */
 
 var beamRifle = new WeaponType("Magic Arrow", null, simpleFire, 2, 3, beam);
 var machinGun = new WeaponType("Windy Gatling", 100, spam2Fire, 1, 2, bubble_testing);
@@ -53,6 +61,7 @@ function GameLoop()
 	this.x = 0;
 	this.y = 0;
 	this.shoot = 0;
+	this.boom = 0;
     }
 
     var timeDiff = 0;
@@ -109,10 +118,8 @@ function GameLoop()
 	if (this.boom && player.bombs) {
 	    // My Very Best Friend
 	    player.bombs -= 1;
-	    this.boom = false
 
 	    for (var i = -1; i < 1; i += 0.1) {
-		print("shoot ", i, "\n")
 		var pe = player.entity
 		playerBulletManager.push(
 		    new Bubble(bubble_testing, verticalLine,
@@ -204,13 +211,6 @@ function GameLoop()
 	    playerAction.boom = true;
 	    break;
 
-	    case input.reorianteRight:
-	    player.oriantationShoot = player.reorianteShoot(-10);
-	    break;
-
-	    case input.reorianteLeft:
-	    player.oriantationShoot = player.reorianteShoot(10);
-	    break;
 	    default:
 	    //console.log(key);
 	    break;
