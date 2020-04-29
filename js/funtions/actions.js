@@ -95,7 +95,6 @@ function simpleFire(turn, typeBubble)
 	typeBubble = bubble_testing;
     if (this.amunition == 0)
 	return;
-    print(this.amunition, this.name)
     if ((turn - this.lastShoot) >  this.type.rate)
     {
 	this.lastShoot = turn;
@@ -122,7 +121,6 @@ function oddFire(turn, typeBubble)
 	typeBubble = bubble_testing;
     if (this.amunition == 0)
 	return;
-    print(this.amunition, this.name)
     if ((turn - this.lastShoot) >  this.type.rate)
     {
 	this.lastShoot = turn;
@@ -214,7 +212,6 @@ function spam2Fire(turn, typeBubble)
 }
 
 function removeLife(number) {
-    print("dmg: ", this.entity.life, number)
     this.entity.life -= number;
     if (this.entity.life <= 0)
 	this.deathEffects();
