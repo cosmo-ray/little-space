@@ -192,7 +192,7 @@ function GameLoop()
 	    speed = Math.floor(monsterPartialMovementVal);
 	    monsterPartialMovementVal -= Math.floor(monsterPartialMovementVal);
 	}
-	monster.move(this.turn, speed);
+	monster.move(that.turn, speed);
 	var domage = monster.checkCol();
 	if (domage !== 0)
 	{
@@ -218,7 +218,7 @@ function GameLoop()
 	    speed = Math.floor(monsterPartialMovementVal);
 	    monsterPartialMovementVal -= Math.floor(monsterPartialMovementVal);
 	}
-	monster.move(this.turn, speed);
+	monster.move(that.turn, speed);
 	var domage = monster.checkCol();
 	if (domage !== 0)
 	{
@@ -358,7 +358,8 @@ function GameLoop()
 		return ret;
 	    }
 	    beginTime += timeDiff;
-	    ++that.turn;
+	    print("TURN!", that.turn)
+	    that.turn += 1;
 	}
 	else
 	    doPartTurn(false);

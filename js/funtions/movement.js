@@ -101,7 +101,7 @@ function boss0_attack(turn, speed)
     var te = this.entity
     if (!this.acc_y) {
 	this.acc_y = 0;
-	this.turn = 0;
+	turn = 0;
 	this.dir = 0
     }
 
@@ -118,27 +118,30 @@ function boss0_attack(turn, speed)
 	    this.dir = 0
     }
 
-    if ((this.turn & 7) == 0) {
+    if ((turn & 7) == 0) {
 	var bb = mbubble
-	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
-			   te.y + te.h - bb.height, 100, null, true)
+	var b = new Bubble(bb, verticalLine,
+			   te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height,
+			   100, null, true)
 	monsterBulletManager.push(b);
     }
 
     if (te.life < 50) {
 	var bb = mbubble
-	var o = new Oriantation(0.5 * (this.turn & 15) , 1)
-	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
-			   te.y + te.h - bb.height, 100, o, true)
+	var o = new Oriantation(0.5 * (turn & 15) , 1)
+	var b = new Bubble(bb, verticalLine,
+			   te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height, 100,
+			   o, true)
 	monsterBulletManager.push(b);
-	var o = new Oriantation(-0.5 * (this.turn & 15) , 1)
-	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
-			   te.y + te.h - bb.height, 100, o, true)
+	var o = new Oriantation(-0.5 * (turn & 15) , 1)
+	var b = new Bubble(bb, verticalLine,
+			   te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h - bb.height,
+			   100, o, true)
 	monsterBulletManager.push(b);
     }
-
-    this.turn += 1;
-
 }
 
 function verticalShooter(turn, speed)
@@ -146,17 +149,12 @@ function verticalShooter(turn, speed)
     var oriantation = this.entity.oriant
     var te = this.entity
     var bb = mbubble
-    if (typeof(this.shoot_cnt) === 'undefined') {
-	this.shoot_cnt = 0;
-    } else {
-	this.shoot_cnt += 1
-    }
-    if (this.shoot_cnt == 1) {
-	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
-			   te.y - bb.height, 100, null, true)
+    if (turn & 15) {
+	var b = new Bubble(bb, verticalLine,
+			   te.x + te.w / 2 - bb.width / 2,
+			   te.y + te.h, 100, null, true)
 	monsterBulletManager.push(b);
     }
-    this.shoot_cnt = this.shoot_cnt & 15;
     speed = initSpeed(speed);
     oriantation = checkOriantation(oriantation);
     te.y += speed * oriantation.y;
