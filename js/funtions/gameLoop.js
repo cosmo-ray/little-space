@@ -358,7 +358,6 @@ function GameLoop()
 		return ret;
 	    }
 	    beginTime += timeDiff;
-	    print("TURN!", that.turn)
 	    that.turn += 1;
 	}
 	else
