@@ -96,6 +96,29 @@ function verticalLine(turn, speed)
     this.entity.x += speed * oriantation.x;
 }
 
+function verticalShooter(turn, speed)
+{
+    var oriantation = this.entity.oriant
+    var te = this.entity
+    var bb = mbubble
+    if (typeof(this.shoot_cnt) === 'undefined') {
+	this.shoot_cnt = 0;
+    } else {
+	this.shoot_cnt += 1
+    }
+    if (this.shoot_cnt == 1) {
+	print("Monster shoot !!!!!")
+	var b = new Bubble(bb, verticalLine, te.x + te.w / 2 - bb.width / 2,
+			   te.y - bb.height, 100, null, true)
+	monsterBulletManager.push(b);
+    }
+    this.shoot_cnt = this.shoot_cnt & 15;
+    speed = initSpeed(speed);
+    oriantation = checkOriantation(oriantation);
+    te.y += speed * oriantation.y;
+    te.x += speed * oriantation.x;
+}
+
 function oddShoot(turn, speed)
 {
     var oriantation = this.entity.oriant

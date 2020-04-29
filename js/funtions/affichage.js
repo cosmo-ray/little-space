@@ -47,6 +47,12 @@ function write_all() // you change this if you want
 	draw_entity(effectManager[i].entity.x, effectManager[i].entity.y,
 		    effectManager[i].type);
     }
+    for (i = 0; i < monsterBulletManager.length; ++i) {
+	draw_entity(monsterBulletManager[i].entity.x,
+		    monsterBulletManager[i].entity.y,
+		    monsterBulletManager[i].type);
+    }
+
     draw_text_top("Score: " + player.score, 0);
 
     draw_text_top("----- Spell -----", 1);

@@ -18,6 +18,9 @@ img_background_testing.src = 'images/tilesetOpenGameBackground.png';
 var img_ship_testing = new Image();
 img_ship_testing.src = 'images/Spaceship004.png';
 
+var img_ship1 = new Image();
+img_ship1.src = 'images/Spaceship005.png';
+
 var img_player_testing = new Image();
 img_player_testing.src = 'images/set_1080/witch.png'
 
@@ -32,6 +35,9 @@ print(img_explode_testing.src)
 
 var spell1 = new Image();
 spell1.src = 'images/blood-magic/Blood-Magic-Effect_06.png';
+
+var m_spell = new Image();
+m_spell.src = 'images/blood-magic/Blood-Magic-Effect_22.png';
 
 var img_bonus = new Image();
 img_bonus.src = 'images/crystal-qubodup-ccby3-32-blue.png';

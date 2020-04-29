@@ -59,6 +59,7 @@ function monsterCheckCol() {
 	player.removeLife(this.entity.life);
 	return (player.entity.life);
     }
+
     for (i = 0; i < playerBulletManager.length; ++i)
     {
 	if (checkColWithMidlePlayer(this, playerBulletManager[i]))

@@ -179,8 +179,26 @@ function GameLoop()
     }
 
     var monsterPartialMovementVal = 0;
-    function monsterTurn(monster, index, array)
+    function mbPartTurn(monster, index, array)
     {
+	var speed = getAvancement(monster.entity.speed, tdGetPourcentTurn());
+	monsterPartialMovementVal += speed;
+	if (monsterPartialMovementVal < 1)
+	{
+	    return ;
+	}
+	if (monsterPartialMovementVal > 1)
+	{
+	    speed = Math.floor(monsterPartialMovementVal);
+	    monsterPartialMovementVal -= Math.floor(monsterPartialMovementVal);
+	}
+	monster.move(this.turn, speed);
+	var domage = monster.checkCol();
+	if (domage !== 0)
+	{
+	    //monster.removeLife(domage);
+	    return;
+	}
     }
 
     function monsterPartTurn(monster, index, array)
@@ -217,10 +235,6 @@ function GameLoop()
 	}
     }
 
-    function bonusTurn(bonus, index, array)
-    {
-    }
-
     function effectTurn(effect, index, array)
     {
 	effect.removeLife();
@@ -232,16 +246,16 @@ function GameLoop()
 	bubble.move(this.turn, speed);
     }
 
-    function playerBubbleTurn(bubble, index, array)
-    {
-    }
-
     function nullTurn()
     {
     }
 
-    var entitysMovementsFunctions = new Array(nullTurn, playerBubbleTurn, bonusTurn, monsterTurn, effectTurn);
-    var entitysPartMovementsFunctions = new Array(nullTurn, playerBubblePartTurn, bonusPartTurn, monsterPartTurn, nullTurn);
+    var entitysMovementsFunctions = new Array(nullTurn, nullTurn, nullTurn,
+					      nullTurn, effectTurn);
+    var entitysPartMovementsFunctions = new Array(mbPartTurn,
+						  playerBubblePartTurn,
+						  bonusPartTurn,
+						  monsterPartTurn, nullTurn);
 
     this.loseGame = function()
     {

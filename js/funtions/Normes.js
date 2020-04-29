@@ -15,7 +15,8 @@ function    allocAnimation(w_frame, h_frame, number_frame, image, fps)
     var sy = 0;
     for (t = 0; t < number_frame ; ++t)
     {
-        drawing.drawImage(image, sx, sy, w_frame, h_frame, 0, 0, w_frame, h_frame);
+        drawing.drawImage(image, sx, sy, w_frame, h_frame,
+			  0, 0, w_frame, h_frame);
         sx = sx + w_frame;
         sy = sy + h_frame;
     }
@@ -75,11 +76,11 @@ function	getPaternFromString(str)
     return (paterns[str]);
 }
 
-/* ---------- 
+/* ----------
  * Partie : "Map Define"
  * Generation des apparitions
  * ---------- */
-function    Map(audio, randomMap)
+function    Map(audio, randomMap, paternFirst, paternLast)
 {
     this.randomMap = randomMap;
     this.length;
@@ -96,11 +97,18 @@ function    Map(audio, randomMap)
     {
 	var curTime = 0;
 	var totTime = that.length * 10;
+	if (!paternFirst)
+	    paternFirst = 0
+	if (!paternLast)
+	    paternLast = nbPatern + 1
 	while (curTime < totTime)
 	{
 	    //console.log(curTime);
-	    var patern = getPaternFromInt(Math.floor((Math.random()*nbPatern)+1));
-	    print("add patern at:", curTime, " / ", totTime)
+	    var patern_id = 0
+	    do {
+		patern_id = Math.floor((Math.random()*nbPatern)+1)
+	    } while (patern_id < paternFirst || patern_id >= paternLast);
+	    var patern = getPaternFromInt(patern_id);
 	    that.addPatern(curTime, patern);
 	    curTime += patern.length;
 	}
