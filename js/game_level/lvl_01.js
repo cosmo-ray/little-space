@@ -9,7 +9,9 @@
 
 /* ---------- LVL I Testing ---------- */
 
-var map = new Map("Mars.wav", true);
+var map = new Map("Mercury.wav", true);
+map.next = new Map("Venus.wav", true);
+map.next.next = new Map("Mars.wav", true);
 
 /* *
  * ----------------------------------------

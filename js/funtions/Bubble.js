@@ -8,6 +8,7 @@ function Bubble(type, move, x, y, power)
                  type.speed,
                  power);
     this.type = type;
+    this.checkCol = playerCheckCol
     this.move = move;
 }
 

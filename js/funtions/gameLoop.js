@@ -225,6 +225,9 @@ function GameLoop()
     {
 	var speed = getAvancement(bubble.entity.speed, tdGetPourcentTurn());
 	bubble.move(this.turn, speed);
+	if (bubble.checkCol() === true) {
+	    bubble.deathEffects();
+	}
     }
 
     function playerBubbleTurn(bubble, index, array)
@@ -308,6 +311,15 @@ function GameLoop()
 	if (timeDiff >= 100) {
 	    ret = doPartTurn(true);
 	    if (ret) {
+		if (loose === false && map.next) {
+                    print("THER's a NEXT !!!");
+                    cleanManager();
+                    map = map.next;
+                    newLoop = new GameLoop;
+                    newLoop.exec();
+                    return false;
+                }
+
 		isEnd = true
 		if (is_yirl)
 		    var qf = yeGet(attached_wid, "quit")
