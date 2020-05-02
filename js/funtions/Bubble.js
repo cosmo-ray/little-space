@@ -21,6 +21,7 @@ function Bubble(type, move, x, y, power, o, isPjBb)
     this.type = type;
     if (typeof(isPjBb) === 'undefined') {
 	this.isPjBb = true
+	this.checkCol = playerCheckCol
     } else {
 	this.isPjBb = false
 	this.checkCol = monsterCheckCol

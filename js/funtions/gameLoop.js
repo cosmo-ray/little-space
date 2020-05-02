@@ -287,6 +287,9 @@ function GameLoop()
     {
 	var speed = getAvancement(bubble.entity.speed, tdGetPourcentTurn());
 	bubble.move(that.turn, speed);
+	if (bubble.checkCol() === true) {
+	    bubble.deathEffects();
+	}
     }
 
     function nullTurn()
