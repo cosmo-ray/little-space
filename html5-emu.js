@@ -263,7 +263,7 @@ function js_emu_action(wid, eves)
     var kd = event_listener_array["keydown"]
     var ku = event_listener_array["keyup"]
 
-    ygModDir("little-space");
+    ygModDir(yeGetStringAt(wid, "dmod"));
     if (kd != null) {
 	var eve = eves
 
@@ -328,7 +328,6 @@ function js_emu_wid_init(wid)
 	print("load: ", yeGetStringAt(wid, "dmod"))
 	ysLoadFile(ygGetManager("js"),
 		   yeGetStringAt(files, i));
-	print("out 0")
     }
     ygModDirOut();
     yeCreateString("rgba: 255 255 255 255", wid, "background")

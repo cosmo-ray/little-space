@@ -9,13 +9,13 @@
     "init-scripts" : [
 	["js", "js_emu_init"]
     ],
-    "make-prototype": "little-space",
+    "make-prototype": "little-mage",
     "starting widget" : "menus.main",
-    "little-space" : {
+    "little-mage" : {
 	"<type>": "html-emu",
 	"quit": "callNext",
 	"next" : "little-mage:menus.main",
-	"dmod": "little-space",
+	"dmod": "little-mage",
 	"files": [
 	    "js/funtions/Normes.js",
             "js/define/display.js",
