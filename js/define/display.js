@@ -41,8 +41,8 @@ fenetre["height"] = (window.innerHeight);
 var drawing_keon = new Array();
 
 if (is_yirl) {
-    drawing_keon["width"] = yWindowWidth()
-    drawing_keon["height"] = yWindowHeight()
+    drawing_keon["width"] = 800
+    drawing_keon["height"] = 600
 } else {
     drawing_keon["width"] = 480;
     drawing_keon["height"] = 800;
