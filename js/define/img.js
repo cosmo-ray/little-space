@@ -52,4 +52,4 @@ var lgatlin_gun_pos = new PosSprite(0,100,50,50);
 var first_boum_pos = new PosSprite(0, 0, 43, 42);
 
 var img_bonus = new Image();
-img_bonus.src = 'images/set_1080/effects/001.gif';
+img_bonus.src = 'images/set_1080/effects/001.png';
