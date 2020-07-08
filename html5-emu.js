@@ -259,7 +259,7 @@ function js_emu_action(wid, eves)
     if (kd != null) {
 	var eve = eves
 
-	for (; eve ; (eve = ywidNextEve(eve) != null)) {
+	for (; eve ; eve = ywidNextEve(eve)) {
 
 	    if (ywidEveType(eve) == YKEY_DOWN) {
 		var jsev = new Event_type()
