@@ -195,7 +195,6 @@ Audio.prototype.addEventListener = function(eve, callback)
     if (eve == "loadedmetadata") {
 	this.y_audio_fd = ySoundMusicLoad(this.src)
 	this.duration = ySoundDuration(this.y_audio_fd) / 1000
-	print("HEJAAAAAA !!!")
 	callback()
     }
 }
@@ -265,12 +264,11 @@ function js_emu_action(wid, eves)
 
     ygModDir(yeGetStringAt(wid, "dmod"));
     if (kd != null) {
-	var eve = eves
 
-	for (; eve ; (eve = ywidNextEve(eve) != null)) {
-
+	for (var eve = eves; eve ; eve = ywidNextEve(eve)) {
 	    if (ywidEveType(eve) == YKEY_DOWN) {
 		var jsev = new Event_type()
+
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		kd(jsev)
 	    }
@@ -278,9 +276,7 @@ function js_emu_action(wid, eves)
     }
 
     if (ku != null) {
-	var eve = eves
-
-	for (; eve ; eve = ywidNextEve(eve)) {
+	for (var eve = eves; eve ; eve = ywidNextEve(eve)) {
 
 	    if (ywidEveType(eve) == YKEY_UP) {
 		var jsev = new Event_type()
@@ -314,7 +310,6 @@ function js_emu_wid_init(wid)
     var files = yeGet(wid, "files")
     var ret = null
 
-    print("js_emu_wid_init")
     yeCreateArray(wid, "textures")
 
     if (yeGet(wid, "mk-elem")) {
@@ -338,7 +333,6 @@ function js_emu_wid_init(wid)
     yeCreateInt(1, can_w, "mergable")
     yeCreateFunction("js_emu_action", wid, "action")
     yeCreateFunction("js_emu_kboum", wid, "destroy")
-    print("new wid")
     ret = ywidNewWidget(wid, "container")
     return ret
 }

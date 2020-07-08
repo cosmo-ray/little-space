@@ -162,8 +162,9 @@ function GameLoop()
 	    player.entity.speed += (player.entity.speed * 2);
 	else if (event.keyCode === input.ctrl)
 	    player.entity.speed -= (player.entity.speed / 2);
-	else if (activateKey.indexOf(event.keyCode) === -1)
+	else if (activateKey.indexOf(event.keyCode) === -1) {
 	    activateKey.push(event.keyCode);
+	}
     }
 
     function waitKeyUp(event)
@@ -175,11 +176,9 @@ function GameLoop()
 	    player.entity.speed = player.type.speed;
 	else
 	{
-	    while (keyIdx !== -1)
-	    {
-		activateKey.splice(keyIdx, 1);
-		keyIdx = activateKey.indexOf(event.keyCode);
-	    }
+	    if (keyIdx < 0)
+		abort()
+	    activateKey.splice(keyIdx, 1);
 	}
     }
 
