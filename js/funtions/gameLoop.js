@@ -38,6 +38,7 @@ function GameLoop()
     var activateKey = new Array;
     var partTurnCounter = 0;
     var input = new Input;
+    var mouse_on = false
     var mouse_x = 0
     var mouse_y = 0
     var loose = false;
@@ -173,10 +174,19 @@ function GameLoop()
 	    //console.log(key);
 	    break;
 	}
-	playerAction.x += mouse_x;
-	playerAction.y += mouse_y;
-	mouse_x = 0
-	mouse_y = 0
+	if (mouse_on) {
+	    if (player.entity.x < move_x) {
+		playerAction.x += player.entity.speed
+	    } else if (player.entity.x > move_x) {
+		playerAction.x += -player.entity.speed
+	    }
+
+	    if (player.entity.y < move_y) {
+		playerAction.y += player.entity.speed;
+	    } else if (player.entity.y > move_y) {
+		playerAction.y += -player.entity.speed;
+	    }
+	}
     }
 
     var monsterPartialMovementVal = 0;
@@ -303,27 +313,22 @@ function GameLoop()
     document.addEventListener('keydown', waitKeyDown, true)
     document.addEventListener('keyup', waitKeyUp, true)
 
+    
     document.addEventListener('mousemove', function (event) {
-	print("x:", player.entity.x, event.offsetX)
-	if (player.entity.x < event.offsetX) {
-	    mouse_x = player.entity.speed
-	} else if (player.entity.x > event.offsetX) {
-	    mouse_x = -player.entity.speed
-	}
-
-	if (player.entity.y < event.offsetY) {
-	    mouse_y = player.entity.speed;
-	} else if (player.entity.y > event.offsetY) {
-	    mouse_y = -player.entity.speed;
-	}
-	print("y:", player.entity.y, event.offsetY)
+	mouse_on = true
+	move_x = event.offsetX
+	move_y = event.offsetY
     });
 
     document.addEventListener('mousedown', function (event) {
 	activateKey.push(input.space);
+	move_x = event.offsetX
+	move_y = event.offsetY
     });
     document.addEventListener('mouseup', function (event) {
 	var keyIdx = activateKey.indexOf(input.space);
+
+	mouse_on = false
 	while (keyIdx !== -1)
 	{
 	    activateKey.splice(keyIdx, 1);
