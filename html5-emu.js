@@ -131,6 +131,9 @@ document_type.prototype.mk_elem = function(id)
 var event_listener_array = {
     "keydown": null,
     "keyup": null,
+    "mousedown": null,
+    "mouseup": null,
+    "mousemove": null,
 }
 
 document_type.prototype.addEventListener = function(eve, callback)
@@ -254,8 +257,33 @@ function js_emu_action(wid, eves)
     var ctimer = Date.now()
     var kd = event_listener_array["keydown"]
     var ku = event_listener_array["keyup"]
+    var md = event_listener_array["mousedown"]
+    var mu = event_listener_array["mouseup"]
+    var mm = event_listener_array["mousemove"]
 
     ygModDir("little-space");
+    if (mu != null || mm != null || md != null) {
+	var eve = eves
+
+	for (; eve ; eve = ywidNextEve(eve)) {
+	    var jsev = new Event_type()
+	    jsev.offsetX = ywidXMouse(eve)
+	    jsev.offsetY = ywidYMouse(eve)
+
+	    if (ywidEveType(eve) == YKEY_MOUSEDOWN && md != null) {
+		md(jsev)
+	    }
+	    else if (ywidEveType(eve) == YKEY_MOUSEUP && mu != null) {
+		mu(jsev)
+	    }
+	    else if (ywidEveType(eve) == YKEY_MOUSEMOTION && mm != null) {
+		mm(jsev)
+	    }
+	    //print("WESH !", eve)
+	}
+	
+    }
+
     if (kd != null) {
 	var eve = eves
 
