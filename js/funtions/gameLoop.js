@@ -175,16 +175,26 @@ function GameLoop()
 	    break;
 	}
 	if (mouse_on) {
-	    if (player.entity.x < move_x) {
-		playerAction.x += player.entity.speed
-	    } else if (player.entity.x > move_x) {
-		playerAction.x += -player.entity.speed
+	    var spdx = player.entity.speed;
+	    var spdy = player.entity.speed;
+	    var mv_x = (move_x - player.type.width / 2)
+	    var mv_y = (move_y - player.type.height / 2)
+
+	    if (yuiAbs(player.entity.x - mv_x) < spdx)
+		spdx = yuiAbs(player.entity.x - mv_x)
+	    if (yuiAbs(player.entity.y - mv_y) < spdy)
+		spdy = yuiAbs(player.entity.y - mv_y)
+
+	    if (player.entity.x < mv_x) {
+		playerAction.x += spdx;
+	    } else if (player.entity.x > mv_x) {
+		playerAction.x += -spdx;
 	    }
 
-	    if (player.entity.y < move_y) {
-		playerAction.y += player.entity.speed;
-	    } else if (player.entity.y > move_y) {
-		playerAction.y += -player.entity.speed;
+	    if (player.entity.y < mv_y) {
+		playerAction.y += spdy;
+	    } else if (player.entity.y > mv_y) {
+		playerAction.y += -spdy;
 	    }
 	}
     }
