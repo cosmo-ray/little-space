@@ -16,23 +16,52 @@
 var patern1 = new Patern;
 paterns["patern1"] = patern1;
 
-//Vague I
-patern1.addMob(0, ship1, verticalShooter, 70);
-patern1.addMob(0, ship_testing, verticalLine, 120);
-patern1.addMob(0, ship_testing, verticalLine, 170);
-patern1.addMob(0, ship1, verticalShooter, 220);
-//Vague II
-patern1.addMob(10, fast_ship_testing, slow_zigzag, 100);
-patern1.addMob(10, fast_ship_testing, slow_zigzag, 500);
-patern1.addMob(10, ship1, zigzag, 300);
-patern1.addMob(10, ship1, zigzag, 400);
-//Vague III
-patern1.addMob(20, ship1, verticalShooter, 270);
-patern1.addMob(20, fast_ship_testing, verticalLine, 320);
-patern1.addMob(20, fast_ship_testing, verticalLine, 370);
-patern1.addMob(20, ship1, verticalShooter, 420);
-//Vague IV
-patern1.addMob(40, ship1, verticalShooter, 70);
-patern1.addMob(40, ship_testing, verticalLine, 220);
-patern1.addMob(40, ship_testing, verticalLine, 370);
-patern1.addMob(40, ship1, verticalShooter, 520);
+//Vague H
+patern1.addMob(0, ship_testing, verticalLine, 510);
+patern1.addMob(0, ship_testing, verticalLine, 600);
+patern1.addMob(1, ship_testing, verticalLine, 510);
+patern1.addMob(1, ship_testing, verticalLine, 600);
+patern1.addMob(2, ship_testing, verticalLine, 510);
+patern1.addMob(2, ship_testing, verticalLine, 530);
+patern1.addMob(2, ship_testing, verticalLine, 550);
+patern1.addMob(2, ship_testing, verticalLine, 570);
+patern1.addMob(2, ship_testing, verticalLine, 600);
+patern1.addMob(3, ship_testing, verticalLine, 510);
+patern1.addMob(3, ship_testing, verticalLine, 600);
+patern1.addMob(4, ship_testing, verticalLine, 510);
+patern1.addMob(4, ship_testing, verticalLine, 600);
+
+//Vague A
+patern1.addMob(9, ship_testing, verticalLine, 650);
+patern1.addMob(8, ship_testing, verticalLine, 640);
+patern1.addMob(8, ship_testing, verticalLine, 660);
+patern1.addMob(7, ship_testing, verticalLine, 630);
+patern1.addMob(7, ship_testing, verticalLine, 670);
+patern1.addMob(6, ship_testing, verticalLine, 620);
+patern1.addMob(6, ship_testing, verticalLine, 680);
+patern1.addMob(5, ship_testing, verticalLine, 610);
+patern1.addMob(5, ship_testing, verticalLine, 690);
+
+//Vague T
+patern1.addMob(14, ship_testing, verticalLine, 600);
+patern1.addMob(14, ship_testing, verticalLine, 620);
+patern1.addMob(14, ship_testing, verticalLine, 640);
+patern1.addMob(13, ship_testing, verticalLine, 620);
+patern1.addMob(12, ship_testing, verticalLine, 620);
+patern1.addMob(11, ship_testing, verticalLine, 620);
+patern1.addMob(10, ship_testing, verticalLine, 620);
+
+//Vague E
+patern1.addMob(15, ship_testing, verticalLine, 660);
+patern1.addMob(15, ship_testing, verticalLine, 680);
+patern1.addMob(15, ship_testing, verticalLine, 700);
+
+patern1.addMob(16, ship_testing, verticalLine, 660);
+patern1.addMob(17, ship_testing, verticalLine, 660);
+patern1.addMob(17, ship_testing, verticalLine, 680);
+patern1.addMob(17, ship_testing, verticalLine, 700);
+
+patern1.addMob(18, ship_testing, verticalLine, 660);
+patern1.addMob(19, ship_testing, verticalLine, 660);
+patern1.addMob(19, ship_testing, verticalLine, 680);
+patern1.addMob(19, ship_testing, verticalLine, 700);

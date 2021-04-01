@@ -41,7 +41,7 @@ var img_boss_hurt = new Image();
 img_boss_hurt.src = 'images/boss0-1.png';
 
 var img_player_testing = new Image();
-img_player_testing.src = 'images/set_1080/witch.png'
+img_player_testing.src = 'rms.png'
 
 // --- Explosion
 var img_explode_testing = new Image();
@@ -58,5 +58,4 @@ var m_spell = new Image();
 m_spell.src = 'images/blood-magic/Blood-Magic-Effect_22.png';
 
 var img_bonus = new Image();
-img_bonus.src = 'images/crystal-qubodup-ccby3-32-blue.png';
-var bonus_pos = new PosSprite(0,0,32,32);
+img_bonus.src = 'gnu_icon.png';
