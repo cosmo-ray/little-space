@@ -7,7 +7,7 @@ var ship1 = addType(27, 30, img_ship1, 10);
 var boss0 = addType(70, 90, img_boss, 12);
 var boss0_hurt = addType(70, 90, img_boss_hurt, 12);
 
-var player_testing = addType(80, 30, img_player_testing, 25);
+var player_testing = addType(80, 33, img_player_testing, 25);
 
 var bubble_testing = addType(30, 30, spell1, 35);
 var slower_bb = addType(30, 30, spell1, 25);

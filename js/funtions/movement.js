@@ -187,20 +187,40 @@ function oddShoot(turn, speed)
     }
 }
 
+function half_slow_zigzag(turn, speed)
+{
+    this.verticalLine = verticalLine
+    this.zigzag = slow_zigzag
+    if (this.entity.y < 200)
+	this.verticalLine(turn, speed)
+    else
+	this.zigzag(turn, speed)
+}
+
+function half_zigzag(turn, speed)
+{
+    this.verticalLine = verticalLine
+    this.zigzag = zigzag
+    if (this.entity.y < 100)
+	this.verticalLine(turn, speed)
+    else
+	this.zigzag(turn, speed)
+}
+
 function zigzag(turn, speed)
 {
     var oriantation = this.entity.oriant
 
     oriantation = checkOriantation(oriantation);
     speed = initSpeed(speed);
-    if (this.entity["movementUtil"].length == 0)
-    {
-    if ((this.entity.x + this.entity.w) > (current_screen["width"] / 2))
-        this.entity["movementUtil"].push(1);
-    else
-        this.entity["movementUtil"].push(-1);
+    if (this.entity["movementUtil"].length == 0) {
+	if ((this.entity.x + this.entity.w) > (current_screen["width"] / 2))
+            this.entity["movementUtil"].push(1);
+	else
+            this.entity["movementUtil"].push(-1);
     }
-    if ((this.entity.x + this.entity.w) >= (current_screen["width"] - this.entity.w / 2)  || this.entity.x <= this.entity.w / 2)
+    if ((this.entity.x + this.entity.w) >= (current_screen["width"] - this.entity.w / 2) ||
+	this.entity.x <= this.entity.w / 2)
 	this.entity["movementUtil"][0] *= -1;
     if (this.entity["movementUtil"][0] == -1)
 	this.entity.x -= (speed * oriantation.y);

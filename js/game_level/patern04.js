@@ -17,51 +17,51 @@ var patern4 = new Patern;
 paterns["patern4"] = patern4;
 
 //Vague H
-patern4.addMob(0, ship_testing, verticalLine, 310);
-patern4.addMob(0, ship_testing, verticalLine, 400);
-patern4.addMob(1, ship_testing, verticalLine, 310);
-patern4.addMob(1, ship_testing, verticalLine, 400);
-patern4.addMob(2, ship_testing, verticalLine, 310);
-patern4.addMob(2, ship_testing, verticalLine, 330);
-patern4.addMob(2, ship_testing, verticalLine, 350);
-patern4.addMob(2, ship_testing, verticalLine, 370);
-patern4.addMob(2, ship_testing, verticalLine, 400);
-patern4.addMob(3, ship_testing, verticalLine, 310);
-patern4.addMob(3, ship_testing, verticalLine, 400);
-patern4.addMob(4, ship_testing, verticalLine, 310);
-patern4.addMob(4, ship_testing, verticalLine, 400);
+patern4.addMob(0, ship_testing, half_zigzag, 310);
+patern4.addMob(0, ship_testing, half_zigzag, 400);
+patern4.addMob(1, ship_testing, half_zigzag, 310);
+patern4.addMob(1, ship_testing, half_zigzag, 400);
+patern4.addMob(2, ship_testing, half_zigzag, 310);
+patern4.addMob(2, ship_testing, half_zigzag, 330);
+patern4.addMob(2, ship_testing, half_zigzag, 350);
+patern4.addMob(2, ship_testing, half_zigzag, 370);
+patern4.addMob(2, ship_testing, half_zigzag, 400);
+patern4.addMob(3, ship_testing, half_zigzag, 310);
+patern4.addMob(3, ship_testing, half_zigzag, 400);
+patern4.addMob(4, ship_testing, half_zigzag, 310);
+patern4.addMob(4, ship_testing, half_zigzag, 400);
 
 //Vague A
-patern4.addMob(9, ship_testing, verticalLine, 350);
-patern4.addMob(8, ship_testing, verticalLine, 340);
-patern4.addMob(8, ship_testing, verticalLine, 360);
-patern4.addMob(7, ship_testing, verticalLine, 330);
-patern4.addMob(7, ship_testing, verticalLine, 370);
-patern4.addMob(6, ship_testing, verticalLine, 320);
-patern4.addMob(6, ship_testing, verticalLine, 380);
-patern4.addMob(5, ship_testing, verticalLine, 310);
-patern4.addMob(5, ship_testing, verticalLine, 390);
+patern4.addMob(9, ship_testing, half_zigzag, 350);
+patern4.addMob(8, ship_testing, half_zigzag, 340);
+patern4.addMob(8, ship_testing, half_zigzag, 360);
+patern4.addMob(7, ship_testing, half_zigzag, 330);
+patern4.addMob(7, ship_testing, half_zigzag, 370);
+patern4.addMob(6, ship_testing, half_zigzag, 320);
+patern4.addMob(6, ship_testing, half_zigzag, 380);
+patern4.addMob(5, ship_testing, half_zigzag, 310);
+patern4.addMob(5, ship_testing, half_zigzag, 390);
 
 //Vague T
-patern4.addMob(14, ship_testing, verticalLine, 300);
-patern4.addMob(14, ship_testing, verticalLine, 320);
-patern4.addMob(14, ship_testing, verticalLine, 340);
-patern4.addMob(13, ship_testing, verticalLine, 320);
-patern4.addMob(12, ship_testing, verticalLine, 320);
-patern4.addMob(11, ship_testing, verticalLine, 320);
-patern4.addMob(10, ship_testing, verticalLine, 320);
+patern4.addMob(14, ship_testing, half_zigzag, 300);
+patern4.addMob(14, ship_testing, half_zigzag, 320);
+patern4.addMob(14, ship_testing, half_zigzag, 340);
+patern4.addMob(13, ship_testing, half_zigzag, 320);
+patern4.addMob(12, ship_testing, half_zigzag, 320);
+patern4.addMob(11, ship_testing, half_zigzag, 320);
+patern4.addMob(10, ship_testing, half_zigzag, 320);
 
 //Vague E
-patern4.addMob(15, ship_testing, verticalLine, 360);
-patern4.addMob(15, ship_testing, verticalLine, 380);
-patern4.addMob(15, ship_testing, verticalLine, 400);
+patern4.addMob(15, ship_testing, half_zigzag, 360);
+patern4.addMob(15, ship_testing, half_zigzag, 380);
+patern4.addMob(15, ship_testing, half_zigzag, 400);
 
-patern4.addMob(16, ship_testing, verticalLine, 360);
-patern4.addMob(17, ship_testing, verticalLine, 360);
-patern4.addMob(17, ship_testing, verticalLine, 380);
-patern4.addMob(17, ship_testing, verticalLine, 400);
+patern4.addMob(16, ship_testing, half_zigzag, 360);
+patern4.addMob(17, ship_testing, half_zigzag, 360);
+patern4.addMob(17, ship_testing, half_zigzag, 380);
+patern4.addMob(17, ship_testing, half_zigzag, 400);
 
-patern4.addMob(18, ship_testing, verticalLine, 360);
-patern4.addMob(19, ship_testing, verticalLine, 360);
-patern4.addMob(19, ship_testing, verticalLine, 380);
-patern4.addMob(19, ship_testing, verticalLine, 400);
+patern4.addMob(18, ship_testing, half_zigzag, 360);
+patern4.addMob(19, ship_testing, half_zigzag, 360);
+patern4.addMob(19, ship_testing, half_zigzag, 380);
+patern4.addMob(19, ship_testing, half_zigzag, 400);
