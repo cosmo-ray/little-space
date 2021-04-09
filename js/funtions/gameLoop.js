@@ -177,7 +177,7 @@ function GameLoop()
 	else
 	{
 	    if (keyIdx < 0)
-		abort()
+		return
 	    activateKey.splice(keyIdx, 1);
 	}
     }
