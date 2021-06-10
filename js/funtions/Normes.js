@@ -75,18 +75,13 @@ function	getPaternFromString(str)
     return (paterns[str]);
 }
 
-/* ---------- 
- * Partie : "Map Define"
- * Generation des apparitions
- * ---------- */
 function    Map(audio, randomMap)
 {
     this.randomMap = randomMap;
     this.length;
     this.audio = audio;
     this.monsterApparition = new Array();
-    for (i = 0; i < maxSize; ++i)
-    {
+    for (i = 0; i < maxSize; ++i) {
         this.monsterApparition.push(new Array);
     }
 
@@ -96,8 +91,7 @@ function    Map(audio, randomMap)
     {
 	var curTime = 0;
 	var totTime = that.length * 10;
-	while (curTime < totTime)
-	{
+	while (curTime < totTime) {
 	    //console.log(curTime);
 	    var patern = getPaternFromInt(Math.floor((Math.random()*nbPatern)+1));
 	    print("add patern at:", curTime, " / ", totTime)

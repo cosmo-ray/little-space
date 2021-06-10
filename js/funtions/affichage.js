@@ -18,8 +18,10 @@ function background()
 function write_all() // you change this if you want
 {
     //drawing.clear()
-    print("length: ", monsterManager.length, playerBulletManager.length,
-	  bonusManager.length, effectManager.length)
+    if (0) {
+	print("length: ", monsterManager.length, playerBulletManager.length,
+	      bonusManager.length, effectManager.length);
+    }
 
     background();
     player_write();
@@ -60,7 +62,9 @@ function draw_entity(x, y, type)
 
 function player_write()
 {
-    print("player: ", player.entity.x, player.entity.y, player.type,
-	  current_screen["width"], current_screen["height"])
+    if (0) {
+	print("player: ", player.entity.x, player.entity.y, player.type,
+	      current_screen["width"], current_screen["height"]);
+    }
     draw_entity(player.entity.x, player.entity.y, player.type);
 }

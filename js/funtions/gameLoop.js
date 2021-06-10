@@ -25,8 +25,10 @@ function GameLoop()
 		map.length = lenght;
 		//map.length = 3;
       		//console.log(map.length);
-		map.genMap();
+	    } else {
+		lenght = map.length
 	    }
+	    map.genMap();
 	    // if you want to stop the sound just comment the below line :)
 	    audio.play();
 	    animFrame(recursiveAnim);
@@ -36,6 +38,12 @@ function GameLoop()
 
     var isEnd = false;
     var activateKey = new Array;
+    this.activateKey = function() {
+	return activateKey
+    }
+    this.setActivateKey = function(ak) {
+	 activateKey = ak
+    }
     var partTurnCounter = 0;
     var input = new Input;
     var mouse_on = false
@@ -111,6 +119,18 @@ function GameLoop()
 	exec: execPlayerAction,
 	partExec : partExecPlayerAction
     };
+
+    this.playerAction = function()
+    {
+	return playerAction;
+    }
+
+    this.setPlayerAction = function(pa)
+    {
+	playerAction.x = pa.x;
+	playerAction.y = pa.y;
+	playerAction.fire = pa.fire;
+    }
 
     /**
      * Wait for an input and store the input in key if there's one
@@ -365,6 +385,9 @@ function GameLoop()
                     cleanManager();
                     map = map.next;
                     newLoop = new GameLoop;
+		    let ak = gameLoop.activateKey()
+		    newLoop.setActivateKey(ak)
+		    print(ak)
                     newLoop.exec();
                     return false;
                 }
