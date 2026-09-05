@@ -54,7 +54,17 @@ function GameLoop()
     var activateKey = new Array;
     var partTurnCounter = 0;
     var input = new Input;
+    var mouse_on = false
+    var mouse_x = 0
+    var mouse_y = 0
     var loose = false;
+
+    this.activateKey = function() {
+	return activateKey
+    }
+    this.setActivateKey = function(ak) {
+	activateKey = ak
+    }
 
     function initPlayerAction()
     {
@@ -176,9 +186,11 @@ function GameLoop()
 	    player.entity.speed = player.type.speed;
 	else
 	{
-	    if (keyIdx < 0)
-		abort()
-	    activateKey.splice(keyIdx, 1);
+	    while (keyIdx !== -1)
+	    {
+		activateKey.splice(keyIdx, 1);
+		keyIdx = activateKey.indexOf(event.keyCode);
+	    }
 	}
     }
 
@@ -207,12 +219,36 @@ function GameLoop()
 	    break;
 
 	    case input.x:
+	    case input.xAlt:
 	    playerAction.boom = true;
 	    break;
 
 	    default:
 	    //console.log(key);
 	    break;
+	}
+	if (mouse_on) {
+	    var spdx = player.entity.speed;
+	    var spdy = player.entity.speed;
+	    var mv_x = (mouse_x - player.type.width / 2)
+	    var mv_y = (mouse_y - player.type.height / 2)
+
+	    if (yuiAbs(player.entity.x - mv_x) < spdx)
+		spdx = yuiAbs(player.entity.x - mv_x)
+	    if (yuiAbs(player.entity.y - mv_y) < spdy)
+		spdy = yuiAbs(player.entity.y - mv_y)
+
+	    if (player.entity.x < mv_x) {
+		playerAction.x += spdx;
+	    } else if (player.entity.x > mv_x) {
+		playerAction.x += -spdx;
+	    }
+
+	    if (player.entity.y < mv_y) {
+		playerAction.y += spdy;
+	    } else if (player.entity.y > mv_y) {
+		playerAction.y += -spdy;
+	    }
 	}
     }
 
@@ -361,6 +397,28 @@ function GameLoop()
     document.addEventListener('keydown', waitKeyDown, true)
     document.addEventListener('keyup', waitKeyUp, true)
 
+    document.addEventListener('mousemove', function (event) {
+	mouse_on = true
+	mouse_x = event.offsetX
+	mouse_y = event.offsetY
+    });
+
+    document.addEventListener('mousedown', function (event) {
+	activateKey.push(input.space);
+	mouse_x = event.offsetX
+	mouse_y = event.offsetY
+    });
+    document.addEventListener('mouseup', function (event) {
+	var keyIdx = activateKey.indexOf(input.space);
+
+	mouse_on = false
+	while (keyIdx !== -1)
+	{
+	    activateKey.splice(keyIdx, 1);
+	    keyIdx = activateKey.indexOf(input.space);
+	}
+    });
+
     var beginTime = null;
     var animFrame = window.requestAnimationFrame;
     var ctime = null
@@ -382,6 +440,7 @@ function GameLoop()
 		    cleanManager();
 		    map = map.next;
 		    newLoop = new GameLoop;
+		    newLoop.setActivateKey(that.activateKey());
 		    newLoop.exec();
 		    return false;
 		}

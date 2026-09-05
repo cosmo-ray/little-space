@@ -139,6 +139,9 @@ document_type.prototype.mk_elem = function(id)
 var event_listener_array = {
     "keydown": null,
     "keyup": null,
+    "mousedown": null,
+    "mouseup": null,
+    "mousemove": null,
 }
 
 document_type.prototype.addEventListener = function(eve, callback)
@@ -212,6 +215,8 @@ Audio.prototype.pause = function()
 function Event_type()
 {
     this.keyCode = -1
+    this.offsetX = 0
+    this.offsetY = 0
 }
 
 function JsKeyCode()
@@ -261,28 +266,40 @@ function js_emu_action(wid, eves)
     var ctimer = Date.now()
     var kd = event_listener_array["keydown"]
     var ku = event_listener_array["keyup"]
+    var md = event_listener_array["mousedown"]
+    var mu = event_listener_array["mouseup"]
+    var mm = event_listener_array["mousemove"]
 
     ygModDir(yeGetStringAt(wid, "dmod"));
-    if (kd != null) {
-
+    if (kd != null || ku != null || md != null || mu != null || mm != null) {
 	for (var eve = eves; eve ; eve = ywidNextEve(eve)) {
-	    if (ywidEveType(eve) == YKEY_DOWN) {
+	    if (ywidEveType(eve) == YKEY_DOWN && kd != null) {
 		var jsev = new Event_type()
-
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		kd(jsev)
 	    }
-	}
-    }
-
-    if (ku != null) {
-	for (var eve = eves; eve ; eve = ywidNextEve(eve)) {
-
-	    if (ywidEveType(eve) == YKEY_UP) {
+	    else if (ywidEveType(eve) == YKEY_UP && ku != null) {
 		var jsev = new Event_type()
-
 		jsev.keyCode = js_emu_conve_kcode(ywidEveKey(eve))
 		ku(jsev)
+	    }
+	    else if (ywidEveType(eve) == YKEY_MOUSEDOWN && md != null) {
+		var jsev = new Event_type()
+		jsev.offsetX = ywidXMouse(eve)
+		jsev.offsetY = ywidYMouse(eve)
+		md(jsev)
+	    }
+	    else if (ywidEveType(eve) == YKEY_MOUSEUP && mu != null) {
+		var jsev = new Event_type()
+		jsev.offsetX = ywidXMouse(eve)
+		jsev.offsetY = ywidYMouse(eve)
+		mu(jsev)
+	    }
+	    else if (ywidEveType(eve) == YKEY_MOUSEMOTION && mm != null) {
+		var jsev = new Event_type()
+		jsev.offsetX = ywidXMouse(eve)
+		jsev.offsetY = ywidYMouse(eve)
+		mm(jsev)
 	    }
 	}
     }

@@ -25,8 +25,10 @@ function	Input()
     this.space = 32;
     this.shift = 16;
     this.ctrl = 17;
-    this.x = 120;
-    this.c = 99;
+    this.x = 88;
+    this.c = 67;
+    this.xAlt = 120;
+    this.cAlt = 99;
     this.reorianteRight = this.x;
     this.reorianteLeft = this.c;
 }
