@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Little Space
+GenericName=Shoot'em Up Game
+Comment=Small Shoot'em Up
+Keywords=shoot em up;game;
+Exec=sh -c "little-space >/dev/null 2>&1"
+Categories=Game;Shump;Shooter

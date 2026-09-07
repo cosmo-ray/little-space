@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Little Mage
+GenericName=Shoot'em Up Game
+Comment=Pewpew and Pepper, a small Shoot'em Up
+Keywords=shoot em up;game;
+Exec=sh -c "little-mage >/dev/null 2>&1"
+Categories=Game;Shump;Shooter
