@@ -1,0 +1,23 @@
+{
+    "name" : "little-space",
+    "window size" : [400, 600],
+    "window name" : "Little Space",
+    "pre-load" : [
+        { "path" : "../", "type" : "module" },
+	{ "file" : "menus.json", "type" : "json", "as" : "menus"}
+    ],
+    "starting widget" : "menus.main",
+    "little-space" : {
+	"<type>": "little-shmup",
+	"quit": "callNext",
+	"next" : "little-space:menus.main",
+	"dmod": "little-space",
+	"img" : "img.js",
+	"object" : "object.js",
+	"patterns" : [
+	    "patern01.js",
+	    "patern02.js"
+	],
+	"levels" : "levels/lvl.js"
+    }
+}

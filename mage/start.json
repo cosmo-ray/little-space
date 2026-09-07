@@ -1,0 +1,25 @@
+{
+    "name" : "little-mage",
+    "window size" : [800, 600],
+    "window name" : "Pewpew and Pepper",
+    "pre-load" : [
+        { "path" : "../", "type" : "module" },
+	{ "file" : "menus.json", "type" : "json", "as" : "menus"}
+    ],
+    "starting widget" : "menus.main",
+    "little-mage" : {
+	"<type>": "little-shmup",
+	"quit": "callNext",
+	"next" : "little-mage:menus.main",
+	"dmod": "little-mage",
+	"img" : "img.js",
+	"object" : "object.js",
+	"patterns" : [
+	    "patern04.js",
+	    "patern03.js",
+	    "patern02.js",
+	    "patern01.js"
+	],
+	"levels" : "levels/lvl.js"
+    }
+}

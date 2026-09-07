@@ -1,0 +1,21 @@
+{
+    "main" : {
+        "<type>" : "menu",
+        "entries" : [
+            {
+                "text" : "New Game",
+                "next" : "little-space:little-space",
+                "action" : "menuNext"
+            },
+            {
+                "text" : "Full Screen",
+                "action" : "FullScreenOnOff"
+            },
+            {
+                "text" : "Quit",
+                "action" : "FinishGame"
+            }
+        ],
+        "text-align" : "center"
+    }
+}

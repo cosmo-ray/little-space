@@ -315,16 +315,42 @@ function js_emu_action(wid, eves)
 
 attached_wid = null
 
+var shmup_mod = "little-shmup"
+
 function js_emu_kboum(wid)
 {
     if (yeGet(wid, "otimeow"))
 	ywSetTurnLengthOverwrite(yeGetIntAt(wid, "otimeow"))
 }
 
-// registre Wid
-function js_emu_wid_init(wid)
+// registre Wid little-shmup
+function js_shmup_wid_init(wid)
 {
-    var files = yeGet(wid, "files")
+    var dmod = yeGetStringAt(wid, "dmod")
+    var files = [
+	[shmup_mod, "js/funtions/Normes.js"],
+	[shmup_mod, "js/define/display.js"],
+	[shmup_mod, "js/define/input.js"],
+	[shmup_mod, "js/funtions/movement.js"],
+	[shmup_mod, "js/funtions/format.js"],
+	[shmup_mod, "js/funtions/colision.js"],
+	[shmup_mod, "js/funtions/actions.js"],
+	[shmup_mod, "js/funtions/Monster.js"],
+	[shmup_mod, "js/funtions/Player.js"],
+	[shmup_mod, "js/funtions/Bonus.js"],
+	[shmup_mod, "js/funtions/Bubble.js"],
+	[shmup_mod, "js/funtions/Effect.js"],
+	[shmup_mod, "js/funtions/Weapon.js"],
+	[shmup_mod, "js/funtions/affichage.js"],
+	[dmod, yeGetStringAt(wid, "img")],
+	[dmod, yeGetStringAt(wid, "object")]
+    ]
+    var pats = yeGet(wid, "patterns")
+    if (pats) {
+	for (var p of pats)
+	    files.push([dmod, p.s()])
+    }
+    files.push([dmod, yeGetStringAt(wid, "levels")])
     var ret = null
 
     yeCreateArray(wid, "textures")
@@ -335,13 +361,19 @@ function js_emu_wid_init(wid)
 
     attached_wid = wid
 
-    ygModDir(yeGetStringAt(wid, "dmod"));
-    for (var i = 0; i < yeLen(files); ++i) {
-	print("load: ", yeGetStringAt(wid, "dmod"))
-	ysLoadFile(ygGetManager("js"),
-		   yeGetStringAt(files, i));
+    for (var i = 0; i < files.length; ++i) {
+	ygModDir(files[i][0])
+	ysLoadFile(ygGetManager("js"), files[i][1])
+	ygModDirOut()
     }
-    ygModDirOut();
+
+    /* gameLoop plays ./audio from the game module dir; load it with the
+     * game module as cwd even though the file lives in the engine module */
+    ygModDir(dmod)
+    ysLoadFile(ygGetManager("js"),
+	       yeGetStringAt(ygGet(shmup_mod), "$path") + "/js/funtions/gameLoop.js")
+    ygModDirOut()
+
     yeCreateString("rgba: 255 255 255 255", wid, "background")
     var entries = yeReCreateArray(wid, "entries")
     var can_w = yeCreateArray(entries)
@@ -357,10 +389,13 @@ function js_emu_wid_init(wid)
 
 function js_emu_init(mod)
 {
+    shmup_mod = yeGetStringAt(mod, "name")
+    if (!shmup_mod)
+	shmup_mod = "little-shmup"
+
     var wt = yeCreateArray()
-    yeCreateString("html-emu", wt, "name")
-    yeCreateFunction("js_emu_wid_init", wt, "callback")
-    /* ywidAddSubType is oneof the few (if the the only call) that destroy wt */
+    yeCreateString("little-shmup", wt, "name")
+    yeCreateFunction("js_shmup_wid_init", wt, "callback")
     yeIncrRef(wt)
-    var r = ywidAddSubType(wt)
+    ywidAddSubType(wt)
 }
