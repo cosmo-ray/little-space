@@ -13,7 +13,7 @@
  * 0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 
-var nbPatern = 4;
+var nbPatern = 0;
 var maxSize = 10000;
 var paterns = new Object();
 
@@ -52,6 +52,7 @@ function    addType(width, height, sprite, speed, spritePos)
 
 function    Patern()
 {
+    nbPatern += 1
     this.length = 0;
     this.firstApparition = 0;
     this.lastApparition = 0;
