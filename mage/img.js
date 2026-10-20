@@ -13,19 +13,6 @@
  * 0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 
-function PosSprite(x, y, w, h)
-{
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.copy = function()
-    {
-	var ret = new PosSprite(this.x, this.y, this.w, this.h);
-	return (ret);
-    }
-}
-
 var img_background_testing = new Image();
 img_background_testing.src = 'images/tilesetOpenGameBackground.png';
 

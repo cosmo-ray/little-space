@@ -7,19 +7,6 @@
  * ---------------------------------------- 
  * */
 
-function PosSprite(x, y, w, h)
-{
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.copy = function()
-    {
-	var ret = new PosSprite(this.x, this.y, this.w, this.h);
-	return (ret);
-    }
-}
-
 /* ---------- Chargement background ---------- */
 
 var img_background_testing = new Image();
