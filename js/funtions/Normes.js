@@ -73,6 +73,20 @@ function    Patern()
         apparition['moment'] = moment;
         that.monsterApparition.push(apparition);
     };
+    this.addMobsAscii = function(patern, desc)
+    {
+	let startMoment = 0
+	for (l of patern) {
+	    for (const [key, value] of Object.entries(desc)) {
+		let idx = l.indexOf(key)
+		while (idx >= 0) {
+		    that.addMob(startMoment, value[0], value[1], idx * 32)
+		    idx = l.indexOf(key, idx + 1)
+		}
+	    }
+	    startMoment += 4
+	}
+    }
 }
 
 function	getPaternFromInt(nbr)
